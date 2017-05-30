@@ -1,0 +1,20 @@
+{
+  "name": "movelect",
+  "description": "the movelect app",
+  "main": "index.js",
+  "authors": [
+    "Daniel Whitehead",
+    "Christian Goerner",
+    "Reza Shokri"
+  ],
+  "license": "ISC",
+  "homepage": "http://movelect.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
