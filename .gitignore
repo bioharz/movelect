@@ -112,7 +112,5 @@ fabric.properties
 apache.log
 apache-error.log
 backend/.env
-backend/storage/logs/lumen.og
 backend/vendor
-
-
+/backend/storage/logs/lumen.log
