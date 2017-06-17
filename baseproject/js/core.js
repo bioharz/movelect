@@ -24,7 +24,13 @@ jQuery(document).ready(function() {
             editModal.find('.id').html(addressId);
             theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
             thePrimaryButton = "Speichern";
-ml(thePrimaryButton);
+
+            apiRequestUrl = apiRequestUrl + "&id=" + addressId;
+        }
+
+        //this is to give the title and the "save" button different labels if they clicked on edit or new
+        editModal.find('.modal-title').html(theTitle);
+        editModal.find('.btn-primary').html(thePrimaryButton);
 
         //before we have a formular loaded via ajax - we don't want them to be able to click on "save"
         //therefore we disable the button
