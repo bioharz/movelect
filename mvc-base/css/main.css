@@ -1,57 +1,75 @@
+@charset "UTF-8";
+/*Einfärbung der Links verhindern*/
 /* line 11, ../scss/main.scss */
+a:link {
+  color: #0f0f0f;
+}
+
+/* line 13, ../scss/main.scss */
 #main {
   margin: 0 auto;
   width: 90%;
 }
 @media (min-width: 990px) {
-  /* line 11, ../scss/main.scss */
+  /* line 13, ../scss/main.scss */
   #main {
     width: 990px;
   }
 }
 
-/* line 21, ../scss/main.scss */
+/* line 23, ../scss/main.scss */
 header {
+  /*
+      &::after {
+          content: '';
+          display: block;
+          height: 10px;
+          width: 100%;
+          background-color:$lineColor;
+          margin-top:5px;
+      }
+  */
   margin-bottom: 20px;
 }
-/* line 22, ../scss/main.scss */
+/* line 24, ../scss/main.scss */
 header .inner {
   margin: 0 auto;
   width: 90%;
 }
-/* line 26, ../scss/main.scss */
+/* line 28, ../scss/main.scss */
 header .inner .logo {
   margin-top: 10px;
   margin-bottom: 30px;
 }
-/* line 30, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 header .inner .logo .name {
   font-size: 25px;
   font-weight: 400;
 }
-/* line 35, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 header .inner .logo .version {
   color: #aaa;
   font-size: 10px;
 }
-/* line 36, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 header .inner .logo .version::before {
   content: "Version";
   display: inline-block;
   margin-right: 5px;
 }
 @media (min-width: 990px) {
-  /* line 22, ../scss/main.scss */
+  /* line 24, ../scss/main.scss */
   header .inner {
     width: 990px;
   }
 }
-/* line 54, ../scss/main.scss */
-header::after {
-  content: '';
-  display: block;
-  height: 10px;
-  width: 100%;
-  background-color: #337ab7;
-  margin-top: 5px;
+
+/* line 69, ../scss/main.scss */
+.toast-success {
+  background-color: #dff0d8;
+}
+
+/* line 70, ../scss/main.scss */
+.toast-error {
+  background-color: #f2dede;
 }

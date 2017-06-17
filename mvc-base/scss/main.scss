@@ -7,6 +7,8 @@ $blue               : #337ab7;
 
 $lineColor          : $blue;
 
+/*Einfärbung der Links verhindern*/
+a:link{color: #0f0f0f}
 
 #main {
 
@@ -50,16 +52,16 @@ header {
     }
 
 
-
-    &::after {
-        content: '';
-        display: block;
-        height: 10px;
-        width: 100%;
-        background-color:$lineColor;
-        margin-top:5px;
-    }
-
+    /*
+        &::after {
+            content: '';
+            display: block;
+            height: 10px;
+            width: 100%;
+            background-color:$lineColor;
+            margin-top:5px;
+        }
+    */
     margin-bottom:20px;
 }
 

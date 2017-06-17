@@ -1,6 +1,6 @@
 <?php
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'testdatabase');
-define('DB_USER', 'testuser');
-define('DB_PASS', 'testpass');
+define('DB_NAME', 'mvc');
+define('DB_USER', 'movelect');
+define('DB_PASS', 'K;G8;nSCKz\fljZV');

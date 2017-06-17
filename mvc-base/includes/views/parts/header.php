@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
 	<title><?php echo $this->title; ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
@@ -30,11 +31,17 @@
 </head>
 <body>
 <header>
-	<div class="inner">
+
+
+
+
+<!--
+    <div class="inner">
 		<div class="logo">
 			<div class="name">Adressverwaltung</div>
 			<div class="version">1.0</div>
 		</div>
+-->
 
 		<?php if(LOGGED_IN == true): ?>
 			<nav class="navbar navbar-default">
@@ -62,12 +69,36 @@
 					</div>
 				</div>
 			</nav>
+
+
 		<?php else: ?>
+
+
+            <ul class="nav nav-tabs navigation">
+                <li role="presentation" <?php if($this->current == "home"): ?>class="active"<?php endif; ?>><a href="#">HOME</a></li>
+                <li role="presentation" <?php if($this->current == "about"): ?>class="active"<?php endif; ?>><a href="about">ABOUT</a></li>
+                <li role="presentation" <?php if($this->current == "contact"): ?>class="active"<?php endif; ?>><a href="contact">CONTACT</a></li>
+                <li role="presentation" <?php if($this->current == "login"): ?>class="active"<?php endif; ?>><a href="login">LOGIN</a></li>
+            </ul>
+
+
+
+            <!--Logo-->
+            <div class="col-xs-12 brandlogo">
+                <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
+            </div>
+            <br>
+
+
+
+
+            <!--
 			<nav class="mainnav">
 				<ul class="nav nav-pills">
 					<li<?php if($this->current == "login"): ?>class="active"<?php endif; ?>><a href="login">Login</a></li>
 				</ul>
 			</nav>
+			-->
 		<?php endif; ?>
 
 	</div>
