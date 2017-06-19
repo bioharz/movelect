@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Contact</title>
 
     <!--Grund Implementierung von Bootstrap und Anlegen des Stylesheets-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -10,15 +10,16 @@
     <link href="css/main.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
-
-<!--Navigation Frontend-->
-<ul class="row nav nav-tabs navigation">
-    <li role="presentation" class="active col-xs-3 text-center"><a href="#">HOME</a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="#">ABOUT</a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="#">CONTACT</a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="#">LOGIN</a></li>
+<!--Version 1 Navigation -->
+<ul class="nav nav-tabs navigation">
+    <li role="presentation"><a href="index.html">HOME</a></li>
+    <li role="presentation"><a href='about.html'>ABOUT</a></li>
+    <li role="presentation" class ="active"><a href="#">CONTACT</a></li>
+    <li role="presentation"><a href="Login.html">LOGIN</a></li>
 </ul>
 
 <!--Version 2 Navigation:
@@ -29,33 +30,22 @@
         <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">LOGIN</button>
     </div>
 -->
-
 <br>
 <br>
-
-<!--Logo-->
-<div class="brandlogo">
-    <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
+<br>
+<br>
+<!--Text-->
+<div class="column newsline">
+    <h2 class="col-xs-8">Work in Progress</h2>
+    <div class="col-xs-8">
+        <form action="contactAction.php" method="post">
+            Name: <input type="text" name="name"><br>
+            E-Mail: <input type="text" name="email"><br>
+            Message: <input type="message" style="width:100%;" name="message"><br>
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </div>
 </div>
 <br>
-<br>
-
-<!--Text Headline-->
-<div class="row headline">
-        <h1 class="col-xs-12 text-center">THE MOVIE ELECTING APP
-            <small>
-                <br>Coming soon
-            </small>
-        </h1>
-</div>
-<br>
-<br>
-<!--Sign Up Button-->
-<div class="row signup">
-    <div class="col-xs-3"></div>
-    <button type="submit" class="col-xs-6 btn btn-default">SIGN UP</button>
-    <div class="col-xs-3"></div>
-</div>
-
 </body>
 </html>
