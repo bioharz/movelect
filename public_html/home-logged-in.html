@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home (signed in)</title>
+    <title>My Groups</title>
 
     <!--Grund Implementierung von Bootstrap und Anlegen des Stylesheets-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +13,13 @@
 </head>
 <body>
 <!--Navigation Backend-->
+<ul class="row nav nav-tabs navigation">
+    <li role="presentation" class="active col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-expand" aria-hidden="true"></span></a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+</ul>
+<!-- Navigation V.2 vorerst verworfen
 <ul class="nav nav-tabs navigation">
     <li role="presentation" class="active"><a href="#">
         <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -35,47 +42,33 @@
         </button>
     </a></li>
 </ul>
-
-<!--Version 2 Navigation:
-<div class="row navigation">
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">HOME</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">ABOUT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">CONTACT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">LOGIN</button>
-    </div>
 -->
-</div>
 <br>
 <br>
-<div class="row My Groups">
-    <div class="col-xs-2"></div>
-    <h2 class="col-xs-8">My Groups</h2>
-    <div class="col-xs-2"></div>
+<!--Text Headline-->
+<div class="row headline">
+    <h1 class="col-xs-12 text-center">My Groups</h1>
 </div>
-
 <!--Group List-->
-<div class="col-xs-2"></div>
-<div class="col-xs-8">
+<div class="row groupList">
+<div class="col-xs-4"></div>
+<div class="col-xs-4">
     <ul class="list-group">
-    <li class="list-group-item">Gruppe 1</li>
-    <li class="list-group-item">Gruppe 2</li>
-    <li class="list-group-item">Gruppe 3</li>
-    <li class="list-group-item">Gruppe 4</li>
-    <li class="list-group-item">Gruppe 5</li>
-</ul>
+    <li class="list-group-item text-center">GROUP 1</li>
+    <li class="list-group-item text-center">GROUP 2</li>
+    <li class="list-group-item text-center">GROUP 3</li>
+    <li class="list-group-item text-center">GROUP 4</li>
+    <li class="list-group-item text-center">GROUP 5</li>
+    </ul>
 </div>
-<div class="col-xs-2"></div>
-<br>
-<br>
-<br>
-<div class="col-xs-3"></div>
-<div class="col-xs-6">
-<button type="submit" class="btn btn-default">NEW GROUP</button>
+<div class="col-xs-4"></div>
 </div>
-<div class="col-xs-3"></div>
-
-
-
-
+<br>
+<!--New Group Button-->
+<div class="row">
+    <div class="col-xs-4"></div>
+    <button type="submit" class="col-xs-4 btn btn-default text-center">NEW GROUP</button>
+    <div class="col-xs-4"></div>
+</div>
 </body>
 </html>

@@ -10,16 +10,15 @@
     <link href="css/main.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
-<!--Version 1 Navigation -->
-<ul class="nav nav-tabs navigation">
-    <li role="presentation" class="active"><a href="#">HOME</a></li>
-    <li role="presentation"><a href="about.html">ABOUT</a></li>
-    <li role="presentation"><a href="contact.html">CONTACT</a></li>
-    <li role="presentation"><a href="Login.html">LOGIN</a></li>
+
+<!--Navigation Frontend-->
+<ul class="row nav nav-tabs navigation">
+    <li role="presentation" class="active col-xs-3 text-center"><a href="#">HOME</a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="about.html">ABOUT</a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="contact.html">CONTACT</a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="Login.html">LOGIN</a></li>
 </ul>
 
 <!--Version 2 Navigation:
@@ -33,29 +32,32 @@
 
 <br>
 <br>
-<br>
-<br>
+
 <!--Logo-->
-<div class="col-xs-12 brandlogo">
+<div class="brandlogo">
     <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
 </div>
 <br>
-<!--Text-->
-<div class="row newsline">
-    <div class="col-xs-2"></div>
-    <h2 class="col-xs-8">Work in Progress</h2>
-    <div class="col-xs-2"></div>
+<br>
+
+<!--Text Headline-->
+<div class="row headline">
+        <h1 class="col-xs-12 text-center">THE MOVIE ELECTING APP
+            <small>
+                <br>Coming soon
+            </small>
+        </h1>
 </div>
+<br>
 <br>
 <!--Sign Up Button-->
 <div class="row signup">
     <div class="col-xs-4"></div>
-    <button type="button" class="col-xs-4 btn btn-default">SIGN UP</button>
-    <div class="col-xs-4"></div>
+    <form method="get" action="register.html">
+    <button type="submit" class="col-xs-4 btn btn-default">Register</button>
+    </form>
+        <div class="col-xs-4"></div>
 </div>
-
-
-
 
 </body>
 </html>
