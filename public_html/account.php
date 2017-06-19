@@ -69,5 +69,82 @@ echo "Welcome ".$usrnm;
     <div class="col-xs-4"></div>
 </div>
 </form>
+<form class="form-horizontal" action="action/accountAction.php">
+    <div class="row headline">
+        <h1 class="col-xs-12 text-center">
+            Change stuff:<br><br><small>Change E-Mail:<br></small>
+        </h1>
+    </div>
+
+    <!-- input fields email-->
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+        <div class="col-xs-6">
+            <input type="email" class="form-control text-center" id="inputUser3" name="curremail" placeholder="Tell us your current E-Mail">
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+        <div class="col-xs-6">
+            <input type="email" class="form-control text-center" id="inputUser3" name="nemail" placeholder="Tell us your new E-Mail">
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+        <div class="col-xs-6">
+            <input type="email" class="form-control text-center" id="inputUser3" name="nemail2" placeholder="Repeat your new E-Mail"><br>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <!-- input fielsd password-->
+
+        <div class="row headline">
+            <h1 class="col-xs-12 text-center">
+                <small>Change Password:<br></small>
+            </h1>
+        </div>
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+        <div class="col-xs-6">
+            <input type="email" class="form-control text-center" id="inputUser3" name="pwemail" placeholder="Tell us your current E-Mail">
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+        <div class="row form-group">
+            <div class="col-xs-3"></div>
+            <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+            <div class="col-xs-6">
+                <input type="text" class="form-control text-center" id="inputUser3" name="currpassword" placeholder="Tell us your current password">
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-3"></div>
+            <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+            <div class="col-xs-6">
+                <input type="text" class="form-control text-center" id="inputUser3" name="npassword" placeholder="Tell us your new password">
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+        <div class="row form-group">
+            <div class="col-xs-3"></div>
+            <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+            <div class="col-xs-6">
+                <input type="text" class="form-control text-center" id="inputUser3" name="npassword2" placeholder="Repeat your new password">
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+    <div class="row form-group">
+        <div class="col-xs-4"></div>
+        <button class="col-xs-4 btn btn-default" name="submit" type="submit">Submit</button>
+        <div class="col-xs-4"></div>
+    </div>
+</form>
 </body>
 </html>

@@ -32,7 +32,7 @@ if($password != $password2){
 
 //checks, if the e-mail is already in use
 if(!$error){
-$statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = :email");
+$statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = .$email");
 $result = $statement->execute(array("email"=> $email));
 $res = $statement->fetch();
 if($res !== false){
@@ -43,7 +43,7 @@ if($res !== false){
 
 //checks, if the username is already in use
 if(!$error){
-$statement2 = $pdo->prepare("SELECT * FROM mydb.user WHERE user.name = :name");
+$statement2 = $pdo->prepare("SELECT * FROM mydb.user WHERE user.name = .$name");
 $result2 = $statement2->execute(array("name"=> $name));
 $res2 = $statement2->fetch();
 if($res2 !== false){

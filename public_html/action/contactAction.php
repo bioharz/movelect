@@ -23,7 +23,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 }
 //some form stuff
 $headers =  'MIME-Version: 1.0' . "\r\n";
-$headers .= 'From: Contact@Movelect <contactmovelect@gmail.com>' . "\r\n";
+$headers .= 'From: Movelect <contactmovelect@gmail.com>' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
 //sends mail to the submitter, that the contact was successfull

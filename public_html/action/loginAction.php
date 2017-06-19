@@ -6,7 +6,7 @@ if(isset($_GET['submit'])){
     $email = addslashes(htmlspecialchars($_POST["email"]));
     $password = addslashes(htmlspecialchars($_POST["password"]));
 
-    $statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = :email");
+    $statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = .$email");
     $result = $statement->execute(array('email' => $email));
     $user = $statement->fetch();
 //checks password
