@@ -44,6 +44,33 @@
 -->
 
 		<?php if(LOGGED_IN == true): ?>
+
+            <ul class="nav nav-tabs navigation">
+                <li role="presentation" class="active"><a href="#">
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+                        </button>
+                    </a></li>
+                <li role="presentation"><a href="#">
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </button>
+                    </a></li>
+                <li role="presentation"><a href="#">
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        </button>
+                    </a></li>
+                <li role="presentation"><a href="#">
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </a></li>
+            </ul>
+
+
+
+
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -54,7 +81,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="/" class="navbar-brand active">Adressverwaltung</a>
+						<a href="/" class="navbar-brand active">Gruppenverwaltung</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
