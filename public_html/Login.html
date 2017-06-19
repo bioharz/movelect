@@ -46,13 +46,13 @@
 <br>
 <br>
 <!--Login Form-->
-<form class="form-horizontal">
+<form class="form-horizontal" action="action/loginAction.php">
     <!--Email Eingabe-->
     <div class="row form-group">
         <div class="col-xs-3"></div>
         <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
         <div class="col-xs-6">
-            <input type="email" class="form-control text-center" id="inputEmail3" placeholder="Email">
+            <input type="email" class="form-control text-center" id="inputEmail3" name="email" placeholder="Email">
         </div>
         <div class="col-xs-3"></div>
     </div>
@@ -61,7 +61,7 @@
         <div class="col-xs-3"></div>
         <!-- keine labels <label for="inputPassword3" class="col-sm-2 control-label">Password</label>-->
         <div class="col-xs-6">
-            <input type="password" class="form-control text-center" id="inputPassword3" placeholder="Password">
+            <input type="password" class="form-control text-center" id="inputPassword3" name="password" placeholder="Password">
         </div>
         <div class="col-xs-3"></div>
     </div>
@@ -80,7 +80,7 @@
     <!--Sign In Button-->
     <div class="row form-group">
         <div class="col-xs-4"></div>
-        <button class="col-xs-4 btn btn-default" type="submit">Sign in</button>
+        <button class="col-xs-4 btn btn-default" name="submit" type="submit">Log in</button>
         <div class="col-xs-4"></div>
     </div>
 </form>

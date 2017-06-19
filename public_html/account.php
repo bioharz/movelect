@@ -1,8 +1,18 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+    die('Please <a href="Login.html">Log In</a> or <a href="register.html">register</a> first!');
+}
+//shows, who is logged in
+$usrnm = $_SESSION['username'];
+echo "Welcome ".$usrnm;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Groups</title>
+    <title>My Account</title>
 
     <!--Grund Implementierung von Bootstrap und Anlegen des Stylesheets-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -14,8 +24,8 @@
 <body>
 <!--Navigation Backend-->
 <ul class="row nav nav-tabs navigation">
-    <li role="presentation" class="active col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-expand" aria-hidden="true"></span></a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="home-logged-in.php"><span class="glyphicon glyphicon-expand" aria-hidden="true"></span></a></li>
+    <li role="presentation" class="active col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
     <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span></a></li>
     <li role="presentation" class="col-xs-3 text-center"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
 </ul>
@@ -47,28 +57,16 @@
 <br>
 <!--Text Headline-->
 <div class="row headline">
-    <h1 class="col-xs-12 text-center">My Groups</h1>
-</div>
-<!--Group List-->
-<div class="row groupList">
-<div class="col-xs-4"></div>
-<div class="col-xs-4">
-    <ul class="list-group">
-    <li class="list-group-item text-center">GROUP 1</li>
-    <li class="list-group-item text-center">GROUP 2</li>
-    <li class="list-group-item text-center">GROUP 3</li>
-    <li class="list-group-item text-center">GROUP 4</li>
-    <li class="list-group-item text-center">GROUP 5</li>
-    </ul>
-</div>
-<div class="col-xs-4"></div>
+    <h1 class="col-xs-12 text-center">My Account</h1>
 </div>
 <br>
-<!--New Group Button-->
+<!--LogOut Button-->
+<form class="form-horizontal" action="action/logoutAction.php">
 <div class="row">
     <div class="col-xs-4"></div>
-    <button type="submit" class="col-xs-4 btn btn-default text-center">NEW GROUP</button>
+    <button type="submit" style="color: red;" class="col-xs-4 btn btn-default text-center">LogOut</button>
     <div class="col-xs-4"></div>
 </div>
+</form>
 </body>
 </html>
