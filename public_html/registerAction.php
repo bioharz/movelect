@@ -51,6 +51,10 @@ if($res2 !== false){
     $error = true;
 }
 }
+//some form stuff
+$headers =  'MIME-Version: 1.0' . "\r\n";
+$headers .= 'From: Movelect <contactmovelect@gmail.com>' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 //register logic
 if(!$error){
@@ -60,6 +64,10 @@ $result3 = $statement3->execute(array('name'=> $name, 'email'=> $email, 'pass'=>
 
 if($result3){
     echo "You successfully registered! <a href=Login.html>MovElect Now!</a>";
+    //sends mail to the submitter, that the registration was successfull
+    $confirm = "<h1>Nice to meet you!</h1> \n You sucessfully registered on <link href='https://www.movelect.com'>movelect.com</link>!\n Username: $name \n E-Mail: $email ,\n\n Kind regards, \n\n Team movelect ";
+    mail($email, "Registration@Movelect", $confirm ,$headers );
+
 }else{
     echo "oh! something went wrong!";
     $error = true;
