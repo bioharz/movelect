@@ -12,64 +12,71 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<!--Version 1 Navigation -->
-<ul class="nav nav-tabs navigation">
-    <li role="presentation"><a href="#">HOME</a></li>
-    <li role="presentation"><a href="#">ABOUT</a></li>
-    <li role="presentation"><a href="#">CONTACT</a></li>
-    <li role="presentation" class="active"><a href="#">LOGIN</a></li>
+<!--Navigation Frontend-->
+<ul class="row nav nav-tabs navigation">
+    <li role="presentation" class="col-xs-3 text-center"><a href="#">HOME</a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="#">ABOUT</a></li>
+    <li role="presentation" class="col-xs-3 text-center"><a href="#">CONTACT</a></li>
+    <li role="presentation" class="active col-xs-3 text-center"><a href="#">LOGIN</a></li>
 </ul>
 
-<!--Version 2 Navigation:
-<div class="row navigation">
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">HOME</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">ABOUT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">CONTACT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">LOGIN</button>
-    </div>
--->
-</div>
-<br>
-<br>
-
 <!--Logo-->
-<div class="col-xs-12 brandlogo">
+<div class="brandlogo">
     <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<!--Form-->
-<div class="links col-xs-4"></div>
-<div class="Mitte col-xs-4">
-<form class="form-inline">
-    <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label class="sr-only" for="exampleInputPassword3">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-    </div>
-    <!--<div class="checkbox">
-        <label>
-            <input type="checkbox"> Remember me
-        </label>
-    </div>-->
-    <button type="submit" class="btn btn-default">Sign in</button>
-
-    <button type="submit" class="btn btn-default">No Account yet?</button>
-</form>
+<!--Text Headline-->
+<div class="row headline">
+    <h1 class="col-xs-12 text-center">Login with your Email and Password</h1>
 </div>
-<div class="rechts col-xs-4"></div>
+<br>
+<br>
+<!--Login Form-->
+<form class="form-horizontal">
+    <!--Email Eingabe-->
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine Labels<label for="inputEmail3" class="col-sm-2 control-label">Email</label>-->
+        <div class="col-xs-6">
+            <input type="email" class="form-control text-center" id="inputEmail3" placeholder="Email">
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <!--Passwort Eingabe-->
+    <div class="row form-group">
+        <div class="col-xs-3"></div>
+        <!-- keine labels <label for="inputPassword3" class="col-sm-2 control-label">Password</label>-->
+        <div class="col-xs-6">
+            <input type="password" class="form-control text-center" id="inputPassword3" placeholder="Password">
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+    <!-- Remember Me Checkbox
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </div>
+    -->
+    <!--Sign In Button-->
+    <div class="row form-group">
+        <div class="col-xs-4"></div>
+        <button class="col-xs-4 btn btn-default" type="submit">Sign in</button>
+        <div class="col-xs-4"></div>
+    </div>
 
-
-
-
-
+    <!--No Account Button-->
+    <div class="row form-group">
+        <div class="col-xs-4"></div>
+        <button class="col-xs-4 btn btn-default" type="submit">No Account?</button>
+        <div class="col-xs-4"></div>
+    </div>
+</form>
 
 </body>
 </html>
