@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root@localhost', '');
+$pdo = new PDO('mysql:host=movelect.com;dbname=movelect', 'movelect', 'K;G8;nSCKz\fljZV');
 
 if(!isset($_POST["submit"])){
     exit;

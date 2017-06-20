@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root@localhost', '');
+$pdo = new PDO('mysql:host=movelect.com;dbname=movelect', 'movelect', 'K;G8;nSCKz\fljZV');
 
 if(!isset($_POST["submit"])){
     exit;
@@ -72,7 +72,7 @@ if((!$curremail==="")AND(!$nemail==="")AND(!$nemail2==="")){
     $statement = $pdo->prepare("UPDATE mydb.user SET pass = .$password_hash WHERE email = .$curremail");
     $statement->execute();
     echo $statement->rowCount() . "Password updated successfully";
-//Confirmation e-mail 
+//Confirmation e-mail
     $message3 = "You sucessfully changed your Password on <link href='https://www.movelect.com'>movelect.com</link>!\n If you didn't do this, please contact us via contactmovelect@gmail.com\n\n Kind regards, \n\n Team movelect ";
     mail($pwemail, "E-Mail update successfull", $message3 ,$headers );
 
