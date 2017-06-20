@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=mydb', 'root@localhost', '');
+$pdo = new PDO('mysql:host=movelect.com;dbname=movelect', 'movelect', 'K;G8;nSCKz\fljZV');
 
 if(!isset($_POST["submit"])){
     exit;
@@ -32,7 +32,7 @@ if($password != $password2){
 
 //checks, if the e-mail is already in use
 if(!$error){
-$statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = :email");
+$statement = $pdo->prepare("SELECT * FROM mydb.user WHERE user.email = .$email");
 $result = $statement->execute(array("email"=> $email));
 $res = $statement->fetch();
 if($res !== false){
@@ -43,7 +43,7 @@ if($res !== false){
 
 //checks, if the username is already in use
 if(!$error){
-$statement2 = $pdo->prepare("SELECT * FROM mydb.user WHERE user.name = :name");
+$statement2 = $pdo->prepare("SELECT * FROM mydb.user WHERE user.name = .$name");
 $result2 = $statement2->execute(array("name"=> $name));
 $res2 = $statement2->fetch();
 if($res2 !== false){
@@ -51,6 +51,10 @@ if($res2 !== false){
     $error = true;
 }
 }
+//some form stuff
+$headers =  'MIME-Version: 1.0' . "\r\n";
+$headers .= 'From: Movelect <contactmovelect@gmail.com>' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 //register logic
 if(!$error){
@@ -59,7 +63,11 @@ $statement3 = $pdo->prepare("INSERT INTO users (name, email, pass) VALUES (:name
 $result3 = $statement3->execute(array('name'=> $name, 'email'=> $email, 'pass'=> $password_hash));
 
 if($result3){
-    echo "You successfully registered! <a href=Login.html>MovElect Now!</a>";
+    echo "You successfully registered! <a href=../Login.html>MovElect Now!</a>";
+    //sends mail to the submitter, that the registration was successfull
+    $confirm = "<h1>Nice to meet you!</h1> \n You sucessfully registered on <link href='https://www.movelect.com'>movelect.com</link>!\n Username: $name \n E-Mail: $email ,\n\n Kind regards, \n\n Team movelect ";
+    mail($email, "Registration@Movelect", $confirm ,$headers );
+
 }else{
     echo "oh! something went wrong!";
     $error = true;
