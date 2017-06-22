@@ -83,9 +83,14 @@ class User extends Database
 		exit();
 	}
 
-	public function login($username, $password)
+    /**
+     * @param $email
+     * @param $password
+     * @return bool
+     */
+    public function login($email, $pass)
 	{
-		$sql = "SELECT `id`,`password` FROM `user` WHERE `name`='" . $this->escapeString($username) . "'";
+		$sql = "SELECT `id`,`pass` FROM `user` WHERE `email`='" . $this->escapeString($email) . "'";
 		$result = $this->query($sql);
 
 
@@ -98,9 +103,9 @@ class User extends Database
 		//now lets check for the password
 		$row = $this->fetchObject($result);
 
-		if(password_verify($password, $row->password))
+		if(password_verify($pass, $row->pass))
 		{
-			$this->username = $username;
+			$this->email = $email;
 			$this->id = $row->id;
 			$this->isLoggedIn = true;
 
@@ -195,7 +200,7 @@ class User extends Database
 		$db = new Database();
 
 		$username = $db->escapeString($data['username']);
-		$password = password_hash($db->escapeString($data['password']), PASSWORD_BCRYPT);
+		$password = password_hash($db->escapeString($data['password']), PASSWORD_BCRYP);
 
 		$sql = "INSERT INTO `user`(`name`,`password`) VALUES('".$username."','".$password."')";
 		$db->query($sql);

@@ -3,6 +3,14 @@
 echo $this->header;
 
 ?>
+
+
+    <!--Logo-->
+    <div class="col-xs-12 brandlogo">
+        <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
+    </div>
+    <br>
+
 <div id="main">
     <div class="row">
         <h1 class="col-xs-12">Login</h1>

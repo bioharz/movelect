@@ -101,20 +101,18 @@
 		<?php else: ?>
 
 
-            <ul class="nav nav-tabs navigation">
-                <li role="presentation" <?php if($this->current == "home"): ?>class="active"<?php endif; ?>><a href="#">HOME</a></li>
-                <li role="presentation" <?php if($this->current == "about"): ?>class="active"<?php endif; ?>><a href="about">ABOUT</a></li>
-                <li role="presentation" <?php if($this->current == "contact"): ?>class="active"<?php endif; ?>><a href="contact">CONTACT</a></li>
-                <li role="presentation" <?php if($this->current == "login"): ?>class="active"<?php endif; ?>><a href="login">LOGIN</a></li>
+            <ul class="row nav nav-tabs navigation">
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "home"): ?> active<?php endif; ?>"><a href="#">HOME</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "about"): ?> active<?php endif; ?>"><a href="about">ABOUT</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "contact"): ?> active<?php endif; ?>"><a href="contact">CONTACT</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "login"): ?> active<?php endif; ?>"><a href="login">LOGIN</a></li>
             </ul>
 
 
 
-            <!--Logo-->
-            <div class="col-xs-12 brandlogo">
-                <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
-            </div>
-            <br>
+
+
+
 
 
 

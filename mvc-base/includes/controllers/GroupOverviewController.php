@@ -14,7 +14,7 @@ class GroupOverviewController extends Controller
 		$this->view->title = "GroupOverview";
 		$this->view->username = $this->user->username;
 
-		$this->view->addresses = AddressModel::getAddressesByUserId($this->user->id);
+		$this->view->group = GroupModel::getGroupByUserId($this->user->id);
 	}
 
 }
