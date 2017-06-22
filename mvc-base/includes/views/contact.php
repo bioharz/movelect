@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
+<?php
 
-    <!--Grund Implementierung von Bootstrap und Anlegen des Stylesheets-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+echo $this->header;
 
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-</head>
-<body>
-
-<!--Navigation Frontend-->
-<ul class="row nav nav-tabs navigation">
-    <li role="presentation" class="col-xs-3 text-center"><a href="index.html">HOME</a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="about.html">ABOUT</a></li>
-    <li role="presentation" class="active col-xs-3 text-center"><a href="#">CONTACT</a></li>
-    <li role="presentation" class="col-xs-3 text-center"><a href="Login.html">LOGIN</a></li>
-</ul>
-
-<!--Version 2 Navigation:
-<div class="row navigation">
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">HOME</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">ABOUT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">CONTACT</button>
-        <button type="button" class="col-xs-3 btn btn-default btn-lg" href="#" role="button">LOGIN</button>
-    </div>
--->
+?>
 
 <br>
 <br>
@@ -79,7 +51,10 @@
 <br>
 
 
-</body>
-</html>
 
 
+<?php
+
+echo $this->footer;
+
+?>
