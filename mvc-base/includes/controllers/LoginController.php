@@ -60,6 +60,14 @@ class LoginController extends Controller
                 $username = $_POST['name'];
                 $email = $_POST['email'];
 
+                //$since = new date('Y-m-d H:i:s');
+
+                //$date = new Date;
+
+                //error_log($date);
+
+                $since = "2017-07-24 11:11:11";
+
                 if (strlen($password) < 8) //check if password is long enough
                 {
                     $error = true;
@@ -70,7 +78,8 @@ class LoginController extends Controller
                     $errorFields['pwd2'] = "Passwort Wiederholung entspricht nicht dem gleichen Wert von Passwort!";
                 }
 
-                if(!$error && !Utils::isValidEmail($email));
+                //if(!$error && Utils::isValidEmail($email));
+                if(false)
                 {
                     $error = true;
                     $errorFields['email'] = "Email Adresse ist ungültig!";
@@ -82,7 +91,7 @@ class LoginController extends Controller
                     $emailExist = User::existsWithUsername($username);
                     //check if username exists already...
                     if (!$userExist && !$emailExist) {
-                        User::createUser(array('username' => $username, 'password' => $password));
+                        User::createUser(array('name' => $username, 'pass' => $password, 'email' => $email, 'since' => $since));
 
                         $jsonResponse = new JSON();
                         $jsonResponse->result = true;
