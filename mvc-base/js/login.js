@@ -31,7 +31,7 @@ jQuery(document).ready(function() {
             that = registerModal.find('.btn-primary').get(0);
         }
 
-        var nonEmptyFields = ['#name', '#pwd', '#pwd2'];
+        var nonEmptyFields = ['#name','#email','#pwd', '#pwd2'];
 
         for(i = 0; i < nonEmptyFields.length; i++) {
             if($(nonEmptyFields[i]).val() == '') {
@@ -85,13 +85,18 @@ jQuery(document).ready(function() {
                     });
 
                 }
+
+
             }
+            //check email pattern
+            if($(''))
         }
 
         registerModal.find('.btn-primary').prop('disabled', false);
 
 
     });
+
 
 
 

@@ -3,6 +3,14 @@
 echo $this->header;
 
 ?>
+
+
+    <!--Logo-->
+    <div class="col-xs-12 brandlogo">
+        <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
+    </div>
+    <br>
+
 <div id="main">
     <div class="row">
         <h1 class="col-xs-12">Login</h1>
@@ -38,7 +46,9 @@ echo $this->header;
     </div>
 </div>
 
-<div class="modal fade<?php if($registerError):?> in<?php endif; ?>" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+
+
+<div class="modal fade in" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -56,6 +66,10 @@ echo $this->header;
                         <div class="form-group">
                             <label for="name">Benutzername:</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Benutzernamen eingeben">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail:</label>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail eingeben">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Passwort (mindestens 8 Zeichen):</label>
