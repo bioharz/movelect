@@ -1,11 +1,11 @@
 <?php
 
-class AddressModel
+class GroupModel
 {
-	public static function getAddressById($id)
+	public static function getGroupById($id)
 	{
 		$db = new Database();
-		$sql = "SELECT * FROM address WHERE id=".intval($id);
+		$sql = "SELECT * FROM `group` WHERE id=".intval($id);
 
 		$result = $db->query($sql);
 
@@ -17,33 +17,35 @@ class AddressModel
 		return null;
 	}
 
-	public static function getAddressesByUserId($userId)
+	public static function getGroupByUserId($userId)
 	{
 		$db = new Database();
 
-		$sql = "SELECT * FROM address WHERE userId=".intval($userId);
+
+
+		$sql = "SELECT * FROM `group`, group_has_user WHERE `group`.id = group_has_user.group_id AND group_has_user.user_id=".intval($userId);
 		$result = $db->query($sql);
 
 		if($db->numRows($result) > 0)
 		{
-			$addressesArray = array();
+			$groupArray = array();
 
 			while($row = $db->fetchObject($result))
 			{
-				$addressesArray[] = $row;
+				$groupArray[] = $row;
 			}
 
-			return $addressesArray;
+			return $groupArray;
 		}
 
 		return null;
 	}
 
-	public static function createNewAddress($data)
+	public static function createNewGroup($data)
 	{
 		$db = new Database();
 
-		$sql = "INSERT INTO address(userId,firstname,lastname,street,zip,city) VALUES('".$db->escapeString($data['userId'])."','".$db->escapeString($data['firstname'])."','".$db->escapeString($data['lastname'])."','".$db->escapeString($data['street'])."','".$db->escapeString($data['zip'])."','".$db->escapeString($data['city'])."')";
+		$sql = "INSERT INTO `group`(name, since, owner_id, password) VALUES('".$db->escapeString($data['name'])."','".intval($data[since])."','".intval($data[owner_id])."','".$db->escapeString($data['password'])."')";
 		$db->query($sql);
 
 		$data['id'] = $db->insertId();
@@ -51,7 +53,8 @@ class AddressModel
 		return (object) $data;
 	}
 
-	public static function saveAddress($data)
+	/*
+	public static function saveGroup($data)
 	{
 		$db = new Database();
 
@@ -60,12 +63,13 @@ class AddressModel
 
 		return (object) $data;
 	}
+	*/
 
-	public static function deleteAddress($id)
+	public static function deleteGroup($id)
 	{
 		$db = new Database();
 
-		$sql = "DELETE FROM address WHERE id=".intval($id);
+		$sql = "DELETE FROM `group` WHERE id=".intval($id);
 		$db->query($sql);
 	}
 }
