@@ -69,13 +69,12 @@ jQuery(document).ready(function() {
                 }
 
 
-                /*
                 else if(!validateEmail($('#email').val())) {
                     $('#email').closest('.form-group').addClass('has-error');
                     hasError = true;
                     registerModal.find('.btn-primary').prop('disabled', false);
 
-                }*/
+                }
                 else {
                     //everything fine
 
