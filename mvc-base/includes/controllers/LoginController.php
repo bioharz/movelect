@@ -14,6 +14,9 @@ class LoginController extends Controller
         $this->view->title = 'Login';
 
         if ($this->user->isLoggedIn) {
+
+
+
             $this->user->redirectToIndex();
         }
 
@@ -43,7 +46,8 @@ class LoginController extends Controller
     private function checkForRegisterPost()
     {
         if (!empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'register') {
-            $requiredFields = array('name', 'email', 'pwd', 'pwd2');
+            //$requiredFields = array('name', 'email', 'pwd', 'pwd2');
+            $requiredFields = array('name', 'pwd', 'pwd2');
 
             $error = false;
             $errorFields = array();
@@ -58,7 +62,10 @@ class LoginController extends Controller
             if (!$error) {
                 $password = $_POST['pwd'];
                 $username = $_POST['name'];
-                $email = $_POST['email'];
+                //$email = $_POST['email']; //TODO: implement this
+                //$email = "user@provider.net";
+
+                $since = date('Y-m-d H:i:s', time());
 
                 if (strlen($password) < 8) //check if password is long enough
                 {
@@ -70,49 +77,48 @@ class LoginController extends Controller
                     $errorFields['pwd2'] = "Passwort Wiederholung entspricht nicht dem gleichen Wert von Passwort!";
                 }
 
-                if(!$error && !Utils::isValidEmail($email));
-                {
+                //if(!$error && Utils::isValidEmail($email));
+                if (false) {
                     $error = true;
                     $errorFields['email'] = "Email Adresse ist ungültig!";
                 }
 
 
                 if (!$error) {
-                    $userExist = User::existsWithUsername($username);
-                    $emailExist = User::existsWithUsername($username);
-                    //check if username exists already...
-                    if (!$userExist && !$emailExist) {
-                        User::createUser(array('username' => $username, 'password' => $password));
+                    $password = $_POST['pwd'];
+                    $user = $_POST['name'];
 
-                        $jsonResponse = new JSON();
-                        $jsonResponse->result = true;
-                        $jsonResponse->setMessage("Benutzer wurde erfolgreich hinzugefügt!");
-                        $jsonResponse->send();
-                    } else if (!$userExist)
+                    if (strlen($password) < 8) //check if password is long enough
                     {
-                        $errorFields['name'] = "Benutzername ist schon vorhanden!";
-
-                        $jsonResponse = new JSON();
-                        $jsonResponse->result = false;
-                        $jsonResponse->setData(array('errorFields' => $errorFields));
-                        $jsonResponse->send();
-                    } else if (!$emailExist) {
-                        $errorFields['name'] = "Email Adresse ist schon vorhanden!";
-
-                        $jsonResponse = new JSON();
-                        $jsonResponse->result = false;
-                        $jsonResponse->setData(array('errorFields' => $errorFields));
-                        $jsonResponse->send();
-                    } else {
-                        $errorFields['name'] = "Benutzername/Email Adresse ist schon vorhanden!";
-
-                        $jsonResponse = new JSON();
-                        $jsonResponse->result = false;
-                        $jsonResponse->setData(array('errorFields' => $errorFields));
-                        $jsonResponse->send();
+                        $error = true;
+                        $errorFields['pwd'] = "Passwort ist zu kurz! Bitte mindestens 8 Zeichen eingeben";
+                    } else if ($password != $_POST['pwd2']) //check if password matches password repetition
+                    {
+                        $error = true;
+                        $errorFields['pwd2'] = "Passwort Wiederholung entspricht nicht dem gleichen Wert von Passwort!";
                     }
 
+                    if (!$error) {
+                        //check if username exists already...
+                        if (User::existsWithUsername($user) == false) {
+                            User::createUser(array('name' => $username, 'pass' => $password /*, 'email' => $email*/, 'since' => $since));
+
+                            $jsonResponse = new JSON();
+                            $jsonResponse->result = true;
+                            $jsonResponse->setMessage("Benutzer wurde erfolgreich hinzugefügt!");
+                            $jsonResponse->send();
+                        } else {
+                            $errorFields['name'] = "Benutzername ist schon vorhanden!";
+
+                            $jsonResponse = new JSON();
+                            $jsonResponse->result = false;
+                            $jsonResponse->setData(array('errorFields' => $errorFields));
+                            $jsonResponse->send();
+                        }
+
+                    }
                 }
+
             }
 
             $jsonResponse = new JSON();
