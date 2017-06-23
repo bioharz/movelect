@@ -22,7 +22,11 @@ class Database
 		$pass			= DB_PASS;
 
 		//establish the connection to the databse
-		$conn = mysqli_connect($host, $user, $pass);
+        if(DB_LOCAL) {
+            $conn = mysqli_connect($host, $user);
+        } else {
+            $conn = mysqli_connect($host, $user, $pass);
+        }
 
 		if(!$conn) //if we failed to establish the connection - output error and stop executing php
 		{

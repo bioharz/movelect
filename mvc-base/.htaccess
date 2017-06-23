@@ -18,3 +18,7 @@
   RewriteRule .* /mvc-base/index.php [L] #adapt this line to your path if necessary
 
 </IfModule>
+
+
+
+

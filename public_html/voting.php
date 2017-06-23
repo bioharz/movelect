@@ -1,4 +1,5 @@
 <?php
+/* auskommentiert zu Testzwecken der Voting-Funktion
 session_start();
 if(!isset($_SESSION['username'])) {
     die('Please <a href="Login.html">Log In</a> or <a href="register.html">register</a> first!');
@@ -6,7 +7,9 @@ if(!isset($_SESSION['username'])) {
 //shows, who is logged in
 $usrnm = $_SESSION['username'];
 echo "Welcome ".$usrnm;
+*/
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
