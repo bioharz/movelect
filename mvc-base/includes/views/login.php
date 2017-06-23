@@ -68,6 +68,10 @@ echo $this->header;
                             <input type="text" class="form-control" name="name" id="name" placeholder="Benutzernamen eingeben">
                         </div>
                         <div class="form-group">
+                            <label for="email">E-Mail:</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="E-Mail eingeben">
+                        </div>
+                        <div class="form-group">
                             <label for="pwd">Passwort (mindestens 8 Zeichen):</label>
                             <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Bitte Passwort eingeben (mind. 8 Zeichen)">
                         </div>
