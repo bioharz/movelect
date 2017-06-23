@@ -13,11 +13,11 @@ class Utils
 
          if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
              //echo("$email is a valid email address");
-             error_log("email is a valid email address");
+             //error_log("email is a valid email address");
              return true;
          } else {
              //echo("$email is not a valid email address");
-             error_log("email is not a valid email address");
+             //error_log("email is not a valid email address");
              return false;
          }
 

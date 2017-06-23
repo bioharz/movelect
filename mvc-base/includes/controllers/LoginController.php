@@ -14,6 +14,9 @@ class LoginController extends Controller
         $this->view->title = 'Login';
 
         if ($this->user->isLoggedIn) {
+
+
+
             $this->user->redirectToIndex();
         }
 

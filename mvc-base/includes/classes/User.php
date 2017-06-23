@@ -92,12 +92,13 @@ class User extends Database
         $sql = "SELECT `id`,`pass`, name, email FROM `user` WHERE `name`='" . $this->escapeString($name) . "'";
         $result = $this->query($sql);
 
-/*
+
         if ($this->numRows($result) == 0) {
+            error_log("ZERO");
             $this->isLoggedIn = false;
             return false; //username not found!
         }
-*/
+
         //now lets check for the password
         $row = $this->fetchObject($result);
 
@@ -220,7 +221,7 @@ class User extends Database
 
         $name = $db->escapeString($data['name']);
         $pass = password_hash($db->escapeString($data['pass']), CRYPT_SHA512);
-        error_log($pass);
+        //error_log($pass);
         $email = $db->escapeString($data['email']);
 
         $sql = "INSERT INTO `user`(`name`,email,since,`pass`) VALUES('" . $name . "','" . $email . "','" . $data[since] . "','" . $pass . "')";
