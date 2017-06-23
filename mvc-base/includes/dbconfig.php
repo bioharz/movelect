@@ -7,4 +7,4 @@ define('DB_USER', 'root');
 define('DB_PASS', 'K;G8;nSCKz\fljZV');
 //define('DB_PASS', 'root');
 
-define('DB_LOCAL', true); //remove this line for productive mode.
+define('DB_LOCAL', false); //remove this line for productive mode.
