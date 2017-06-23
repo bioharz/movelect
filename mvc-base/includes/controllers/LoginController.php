@@ -50,7 +50,7 @@ class LoginController extends Controller
 	{
 		if(!empty($_POST) && isset($_POST['action']) && $_POST['action'] == 'register')
 		{
-			$requiredFields = array('name', 'pwd', 'pwd2');
+			$requiredFields = array('name','pwd', 'pwd2');
 
 			$error = false;
 			$errorFields = array();
