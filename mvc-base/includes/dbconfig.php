@@ -2,7 +2,7 @@
 
 define('DB_HOST', 'localhost');
 //define('DB_NAME', 'mvc');
-define('DB_NAME', 'moveelect');
+define('DB_NAME', 'movelect');
 define('DB_USER', 'movelect');
 define('DB_PASS', 'K;G8;nSCKz\fljZV');
 

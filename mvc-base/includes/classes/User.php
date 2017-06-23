@@ -6,6 +6,9 @@
  */
 class User extends Database
 {
+
+    //TODO return true or false by certain statements(like delete, create....)
+
 	public $username = '';
 	public $id = '';
 
@@ -195,20 +198,40 @@ class User extends Database
 		return true;
 	}
 
-	public static function createUser($data)
+    /**
+     * @param $data[name,email,since,pass]
+     * @return bool
+     */
+    public static function createUser($data)
 	{
 		$db = new Database();
 
-		$username = $db->escapeString($data['username']);
-		$password = password_hash($db->escapeString($data['password']), PASSWORD_BCRYP);
+		$name = $db->escapeString($data['name']);
+		$pass = password_hash($db->escapeString($data['pass']), PASSWORD_BCRYP);
 
-		$sql = "INSERT INTO `user`(`name`,`password`) VALUES('".$username."','".$password."')";
+		//$email = '';
+
+		if(Utils::isValidEmail( $data['email'])) {
+            $email = $db->escapeString($data['email']);
+
+        } else {
+            trigger_error("Invalid Email!!!", E_USER_ERROR);
+		    return false;
+        }
+
+		$sql = "INSERT INTO `user`(`name`,email,since,`pass`) VALUES('".$name."','".$email."','".$data[since]."','".$pass."')";
 		$db->query($sql);
+
+		//return true????
 	}
 
 	public static function deleteUser($id)
 	{
-		//@TODO
+
+		$db = new Database();
+
+		$sql ="DELETE FROM user WHERE id=".intval($id);
+        $db->query($sql);
 	}
 
 	public static function updateUser($data)

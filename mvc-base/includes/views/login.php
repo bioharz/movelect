@@ -46,7 +46,9 @@ echo $this->header;
     </div>
 </div>
 
-<div class="modal fade<?php if($registerError):?> in<?php endif; ?>" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+
+
+<div class="modal fade in" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
