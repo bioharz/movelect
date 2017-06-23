@@ -5,14 +5,6 @@
  */
 jQuery(document).ready(function() {
 
-
-    function validateEmail(email) {
-        //var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        //return re.test(email);
-        return true;
-    }
-
-
     var registerModal = $('#registerModal');
 
     $('.registerOverlay').click(function(e) {
@@ -39,7 +31,7 @@ jQuery(document).ready(function() {
             that = registerModal.find('.btn-primary').get(0);
         }
 
-        var nonEmptyFields = ['#name','#email','#pwd', '#pwd2'];
+        var nonEmptyFields = ['#name', '#pwd', '#pwd2'];
 
         for(i = 0; i < nonEmptyFields.length; i++) {
             if($(nonEmptyFields[i]).val() == '') {
@@ -49,33 +41,18 @@ jQuery(document).ready(function() {
         }
 
         if(!hasError) {
-
-            console.log($('#email').val());
-
-            console.log(validateEmail(console.log($('#email').val())));
-
-
             //check if pwd is long enough...
-            if ($('#pwd').val().length < 8) {
+            if($('#pwd').val().length < 8) {
                 $('#pwd').closest('.form-group').addClass('has-error');
                 hasError = true;
             }
             else {
 
-                if ($('#pwd').val() != $('#pwd2').val()) {
+                if($('#pwd').val() != $('#pwd2').val()) {
                     $('#pwd2').closest('.form-group').addClass('has-error');
                     hasError = true;
                     registerModal.find('.btn-primary').prop('disabled', false);
-                }
-
-
-                else if(!validateEmail($('#email').val())) {
-                    $('#email').closest('.form-group').addClass('has-error');
-                    hasError = true;
-                    registerModal.find('.btn-primary').prop('disabled', false);
-
-                }
-                else {
+                } else {
                     //everything fine
 
                     $.ajax({
@@ -85,19 +62,21 @@ jQuery(document).ready(function() {
                         'dataType': "json",
                         'success': function (receivedData) {
 
-                            if (receivedData.result) {
+                            if(receivedData.result)
+                            {
                                 toastr.success(receivedData.message);
 
-                                window.setTimeout(function () {
+                                window.setTimeout(function() {
                                     location.reload();
                                 }, 2500);
 
                             }
-                            else {
+                            else
+                            {
                                 registerModal.find('.form-group').removeClass('has-error');
 
-                                $.each(receivedData.data.errorFields, function (key, value) {
-                                    $('#' + key).closest('.form-group').addClass('has-error');
+                                $.each(receivedData.data.errorFields, function(key, value) {
+                                    $('#'+key).closest('.form-group').addClass('has-error');
                                 });
                             }
 
@@ -106,17 +85,13 @@ jQuery(document).ready(function() {
                     });
 
                 }
-
-
             }
-            //check email pattern
         }
 
         registerModal.find('.btn-primary').prop('disabled', false);
 
 
     });
-
 
 
 
