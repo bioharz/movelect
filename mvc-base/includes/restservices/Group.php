@@ -18,7 +18,7 @@ class Group extends RESTClass
 	{
 		if(isset($data['returnView']) && $data['returnView'])
 		{
-			$view = new View('Group');
+			$view = new View('newGroup');
 
 			if(isset($data['id']))
 			{

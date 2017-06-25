@@ -8,7 +8,7 @@ echo $this->header;
 
             <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Gruppe anlegen</button>
 
-            <?php if($this->group): ?>
+            <?php if($this->newGroup): ?>
                 <table class="table table-striped">
                     <thead>
                     <tr>
