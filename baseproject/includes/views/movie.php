@@ -56,6 +56,7 @@
 <script type="text/javascript">
 
     var selectedMovie;
+    //var allMovies;
 
 
     (function () {
@@ -96,14 +97,19 @@
 
                 var result = movies["Search"];
 
+                //this.allMovies = result;
+
                 for (var counter in result) {
 
                     var movie = result[counter];
 
+                    selectedMovieID = movie.imdbID;
+
                     var tr = $("<tr>");
                     var titletd = $("<td>").append(movie.Title);
                     var yeartd = $("<td>").append(movie.Year);
-                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100'  onclick=\"selectMovie(movie.imdbID)\" > ");
+
+                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100' onclick=\"selectMovie(this.selectedMovieID)\" > ");
 
                     tr.append(titletd);
                     tr.append(yeartd);
@@ -114,13 +120,22 @@
 
             }
 
-            function selectMovie(movie) {
 
-                console.log(movie);
-
-            }
         }
-    })();
+    }
+
+
+
+
+
+    )();
+
+    function selectMovie(imdbID) {
+
+        console.log(imdbID);
+
+    }
+
 
 
 	var editModal = $('#editModal');
