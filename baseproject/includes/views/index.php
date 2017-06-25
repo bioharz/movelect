@@ -6,16 +6,19 @@ echo $this->header;
 <div id="main">
     <div class="row">
 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neuen Film hinzufügen</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neuen Film manuell hinzufügen</button>
+
+        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal-imdb"><i class="glyphicon glyphicon-plus"></i> Neuen Film von IMDB klauen</button>
+
 
         <?php if($this->movies): ?>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Vorname</th>
-                    <th>Ort</th>
+                    <th>Titel</th>
+                    <th>Direktor</th>
+                    <th>Jahr</th>
                     <th>Bearbeiten</th>
                     <th>Löschen</th>
                 </tr>
@@ -27,8 +30,6 @@ echo $this->header;
                     <td><?php echo $movie->movie_name; ?></td>
                     <td><?php echo $movie->director; ?></td>
                     <td><?php echo $movie->year; ?></td>
-                    <td><?php echo $movie->imdb_id; ?></td>
-                    <td><?php echo $movie->image_path; ?></td>
                     <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
                     <td><a class="btn btn-danger triggerDelete" href="api/movie/" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
                 </tr>

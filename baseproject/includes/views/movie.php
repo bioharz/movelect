@@ -28,6 +28,8 @@
 </div>
 <script type="text/javascript">
 
+
+
 	var editModal = $('#editModal');
 
 	editModal.find('form').unbind('submit');
