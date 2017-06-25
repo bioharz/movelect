@@ -6,7 +6,7 @@ echo $this->header;
 <div id="main">
     <div class="row">
 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Adresse anlegen</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neuen Film hinzufügen</button>
 
         <?php if($this->movies): ?>
         <table class="table table-striped">
@@ -21,21 +21,23 @@ echo $this->header;
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($this->movies as $address): ?>
+            <?php foreach($this->movies as $movie): ?>
                 <tr>
-                    <td><?php echo $address->id; ?></td>
-                    <td><?php echo $address->lastname; ?></td>
-                    <td><?php echo $address->firstname; ?></td>
-                    <td><?php echo $address->city; ?></td>
-                    <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
-                    <td><a class="btn btn-danger triggerDelete" href="api/movie/" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
+                    <td><?php echo $movie->id; ?></td>
+                    <td><?php echo $movie->movie_name; ?></td>
+                    <td><?php echo $movie->director; ?></td>
+                    <td><?php echo $movie->year; ?></td>
+                    <td><?php echo $movie->imdb_id; ?></td>
+                    <td><?php echo $movie->image_path; ?></td>
+                    <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
+                    <td><a class="btn btn-danger triggerDelete" href="api/movie/" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
         <?php else: ?>
                 <p>&nbsp;</p>
-                <div class="alert alert-info">Noch keine Adressen vorhanden - Sie können über den Button <strong>Neue Adresse anlegen</strong> eine neue Adresse Ihrer Adressverwaltung hinzufügen.</div>
+                <div class="alert alert-info">Noch keine Filme vorhanden - Sie können über den Button <strong>Neuen Film hinzufügen</strong> eine neue Film Movelect hinzufügen.</div>
         <?php endif; ?>
 
     </div>

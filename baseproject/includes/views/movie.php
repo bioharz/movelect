@@ -1,30 +1,30 @@
 <div class="row">
-	<form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
+    <form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
 
-		<div class="form-group">
-			<label for="firstname">Vorname:</label>
-			<input type="text" name="firstname" class="form-control" id="firstname" value="<?php echo $this->firstname; ?>">
-		</div>
-		<div class="form-group">
-			<label for="lastname">Nachname:</label>
-			<input type="text" name="lastname" class="form-control" id="lastname" value="<?php echo $this->lastname; ?>">
-		</div>
-		<div class="form-group">
-			<label for="street">Straße</label>
-			<input type="text" class="form-control" name="street" id="street" value="<?php echo $this->street; ?>">
-		</div>
-		<div class="form-group">
-			<label for="zip">PLZ:</label>
-			<input type="text" name="zip" class="form-control" id="zip" value="<?php echo $this->zip; ?>">
-		</div>
-		<div class="form-group">
-			<label for="city">Ort:</label>
-			<input type="text" name="city" class="form-control" id="city" value="<?php echo $this->city; ?>">
-		</div>
-		<?php if($this->id): ?>
-			<input type="hidden" name="id" value="<?php echo $this->id; ?>">
-		<?php endif; ?>
-	</form>
+        <div class="form-group">
+            <label for="movie_name">Aktor:</label>
+            <input type="text" name="movie_name" class="form-control" id="movie_name" value="<?php echo $this->movie_name; ?>">
+        </div>
+        <div class="form-group">
+            <label for="director">Film Name:</label>
+            <input type="text" name="director" class="form-control" id="director" value="<?php echo $this->director; ?>">
+        </div>
+        <div class="form-group">
+            <label for="year">Jahr</label>
+            <input type="text" class="form-control" name="year" id="year" value="<?php echo $this->year; ?>">
+        </div>
+        <div class="form-group">
+            <label for="imdb_id">imdb-id</label>
+            <input type="text" name="imdb_id" class="form-control" id="imdb_id" value="<?php echo $this->imdb_id; ?>">
+        </div>
+        <div class="form-group">
+            <label for="image_path">Bild Pfad</label>
+            <input type="text" name="image_path" class="form-control" id="image_path" value="<?php echo $this->image_path; ?>">
+        </div>
+        <?php if($this->id): ?>
+            <input type="hidden" name="id" value="<?php echo $this->id; ?>">
+        <?php endif; ?>
+    </form>
 </div>
 <script type="text/javascript">
 
@@ -44,7 +44,7 @@
 			that = editModal.find('.btn-primary').get(0);
 		}
 
-		var requiredFields = ['#firstname', '#lastname', '#street', '#zip', '#city'];
+		var requiredFields = ['#movie_name', '#director', '#year', '#imdb_id', '#image_path'];
 
 		for(var i = 0; i < requiredFields.length; i++) {
 			if($(requiredFields[i]).val() == '') {

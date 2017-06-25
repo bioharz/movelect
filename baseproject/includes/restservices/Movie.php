@@ -59,7 +59,7 @@ class Movie extends RESTClass
 
 	protected function createRequest($data)
 	{
-		$requiredFields = array('firstname', 'lastname', 'street', 'zip', 'city');
+		$requiredFields = array('movie_name', 'director', 'year', 'imdb_id', 'image_path');
 
 		$error = false;
 		$errorFields = array();
@@ -97,7 +97,7 @@ class Movie extends RESTClass
 
 	protected function saveRequest($data)
 	{
-		$requiredFields = array('firstname', 'lastname', 'street', 'zip', 'city', 'id');
+		$requiredFields = array('movie_name', 'director', 'year', 'imdb_id', 'image_path', 'id');
 
 		$error = false;
 		$errorFields = array();
