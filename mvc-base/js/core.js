@@ -10,22 +10,22 @@ jQuery(document).ready(function() {
     editModal.on('show.bs.modal', function (event) {
 
         var button = $(event.relatedTarget) // Button that triggered the modal
-        var addressId = button.data('id') // Extract info from data-* attributes
+        var groupId = button.data('id') // Extract info from data-* attributes
 
         var that = this;
 
 
-        var theTitle = "Neue Adresse anlegen";
+        var theTitle = "Neue Gruppe anlegen";
         var thePrimaryButton = "Hinzufügen";
-        var apiRequestUrl = "api/address/?returnView=true";
+        var apiRequestUrl = "api/group/?returnView=true";
 
-        if(typeof addressId !== "undefined")
+        if(typeof groupId !== "undefined")
         {
-            editModal.find('.id').html(addressId);
-            theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
+            editModal.find('.id').html(groupId);
+            theTitle = "Gruppe mit der ID " + groupId + " bearbeiten";
             thePrimaryButton = "Speichern";
 
-            apiRequestUrl = apiRequestUrl + "&id=" + addressId;
+            apiRequestUrl = apiRequestUrl + "&id=" + groupId;
         }
 
         //this is to give the title and the "save" button different labels if they clicked on edit or new
@@ -64,7 +64,7 @@ jQuery(document).ready(function() {
     $('.triggerDelete').click(function(e) {
         e.preventDefault();
 
-        var r = confirm("Wollen Sie die Adresse wirklich löschen?");
+        var r = confirm("Wollen Sie die Gruppe wirklich löschen?");
         if (r == true) {
             var dataToSend = {'id':$(this).attr('data-id')};
             $.ajax({

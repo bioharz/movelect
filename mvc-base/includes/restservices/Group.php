@@ -1,6 +1,6 @@
 <?php
 
-class Address extends RESTClass
+class Group extends RESTClass
 {
 	private $Database = null;
 
@@ -18,16 +18,16 @@ class Address extends RESTClass
 	{
 		if(isset($data['returnView']) && $data['returnView'])
 		{
-			$view = new View('address');
+			$view = new View('Group');
 
 			if(isset($data['id']))
 			{
-				$dataForView = AddressModel::getAddressById($data['id']);
+				$dataForView = GroupModel::getGroupById($data['id']);
 				$user = new User();
 
 				if($dataForView->userId = $user->id)
 				{
-					//ok - its your address!
+					//ok - its your Group!
 
 					//load old values
 					$view->setData((array) $dataForView);
@@ -39,10 +39,10 @@ class Address extends RESTClass
 				}
 				else
 				{
-					//its not your address!
+					//its not your group!
 					$jsonResponse = new JSON();
 					$jsonResponse->result = false;
-					$jsonResponse->setMessage('You tried to edit an address that doesn\'t belong to you! No chance!');
+					$jsonResponse->setMessage('You tried to edit an Group that doesn\'t belong to you! No chance!');
 					$jsonResponse->send();
 				}
 			}
@@ -59,7 +59,7 @@ class Address extends RESTClass
 
 	protected function createRequest($data)
 	{
-		$requiredFields = array('firstname', 'lastname', 'street', 'zip', 'city');
+        $requiredFields = array('name', 'since', 'owner_id', 'password');
 
 		$error = false;
 		$errorFields = array();
@@ -78,11 +78,11 @@ class Address extends RESTClass
 		{
 			$data['userId'] = $user->id;
 
-			AddressModel::createNewAddress($data);
+			GroupModel::createNewGroup($data);
 
 			$jsonResponse = new JSON();
 			$jsonResponse->result = true;
-			$jsonResponse->setMessage('Address created!');
+			$jsonResponse->setMessage('Group created!');
 			$jsonResponse->send();
 		}
 		else
@@ -95,9 +95,10 @@ class Address extends RESTClass
 
 	}
 
+
 	protected function saveRequest($data)
 	{
-		$requiredFields = array('firstname', 'lastname', 'street', 'zip', 'city', 'id');
+        $requiredFields = array('name', 'since', 'owner_id', 'password', 'id');
 
 		$error = false;
 		$errorFields = array();
@@ -114,22 +115,22 @@ class Address extends RESTClass
 
 		if(!$error)
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$groupObj = GroupModel::getGroupById($data['id']);
 
-			if($addressObj->userId != $user->id)
+			if($groupObj->userId != $user->id)
 			{
 				$jsonResponse = new JSON();
 				$jsonResponse->result = false;
-				$jsonResponse->setMessage("You're not allowed to save/edit that address!");
+				$jsonResponse->setMessage("You're not allowed to save/edit that groups!");
 				$jsonResponse->send();
 			}
 			else
 			{
-				AddressModel::saveAddress($data);
+				GroupModel::createNewGroup($data); //TODO: This is shit..., create a new methode
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;
-				$jsonResponse->setMessage('Address saved!');
+				$jsonResponse->setMessage('Group saved!');
 				$jsonResponse->send();
 			}
 
@@ -156,22 +157,22 @@ class Address extends RESTClass
 		}
 		else
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$groupObj = GroupModel::getGroupById($data['id']);
 
-			if($addressObj->userId != $user->id)
+			if($groupObj->userId != $user->id)
 			{
 				$jsonResponse = new JSON();
 				$jsonResponse->result = false;
-				$jsonResponse->setMessage("You're not allowed to delete that address!");
+				$jsonResponse->setMessage("You're not allowed to delete that group!");
 				$jsonResponse->send();
 			}
 			else
 			{
-				AddressModel::deleteAddress($addressObj->id);
+				GroupModel::deleteGroup($groupObj->id);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;
-				$jsonResponse->setMessage('Address deleted!');
+				$jsonResponse->setMessage('Group deleted!');
 				$jsonResponse->send();
 			}
 		}

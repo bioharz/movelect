@@ -6,36 +6,36 @@ echo $this->header;
     <div id="main">
         <div class="row">
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Adresse anlegen</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Gruppe anlegen</button>
 
-            <?php if($this->addresses): ?>
+            <?php if($this->group): ?>
                 <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Vorname</th>
-                        <th>Ort</th>
-                        <th>Bearbeiten</th>
-                        <th>Löschen</th>
+                        <th>Since</th>
+                        <th>Owner_id</th>
+                        <th>GrpPwd</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($this->addresses as $address): ?>
+                    <?php foreach($this->group as $value): ?>
                         <tr>
-                            <td><?php echo $address->id; ?></td>
-                            <td><?php echo $address->lastname; ?></td>
-                            <td><?php echo $address->firstname; ?></td>
-                            <td><?php echo $address->city; ?></td>
-                            <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
-                            <td><a class="btn btn-danger triggerDelete" href="api/address/" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
+                            <td><?php echo $value->id; ?></td>
+                            <td><?php echo $value->name; ?></td>
+                            <td><?php echo $value->since; ?></td>
+                            <td><?php echo $value->owner_id; ?></td>
+                            <td><?php echo $value->GrpPwd; ?></td>
+                            <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $group->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
+                            <td><a class="btn btn-danger triggerDelete" href="api/group/" data-id="<?php echo $group->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
             <?php else: ?>
                 <p>&nbsp;</p>
-                <div class="alert alert-info">Noch keine Adressen vorhanden - Sie können über den Button <strong>Neue Adresse anlegen</strong> eine neue Adresse Ihrer Adressverwaltung hinzufügen.</div>
+                <div class="alert alert-info">Noch keine Gruppen vorhanden - Sie können über den Button <strong>Neue Gruppe anlegen</strong> eine neue Gruppe hinzufügen.</div>
             <?php endif; ?>
 
         </div>

@@ -19,7 +19,7 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<?php if($this->current == "index"): ?>
+	<?php if($this->current == "index" || "GroupOverview"): ?>
 		<script type="text/javascript" src="js/core.js"></script>
 	<?php elseif($this->current == "register"): ?>
 		<script type="text/javascript" src="js/register.js"></script>
@@ -45,6 +45,16 @@
 
 		<?php if(LOGGED_IN == true): ?>
 
+
+
+
+            <ul class="row nav nav-tabs navigation">
+                <li role="presentation" class="active col-xs-3 text-center"><a href="#">MY GROUPS</span></a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="account.php">ACCOUNT</a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="notifications.php">NOTIFICATIONS</span></a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="search.php">SEARCH</a></li>
+            </ul>
+            <!--
             <ul class="nav nav-tabs navigation">
                 <li role="presentation" class="active"><a href="#">
                         <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -67,7 +77,7 @@
                         </button>
                     </a></li>
             </ul>
-
+            -->
 
 
 
