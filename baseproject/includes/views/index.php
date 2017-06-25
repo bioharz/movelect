@@ -28,7 +28,7 @@ echo $this->header;
                     <td><?php echo $address->firstname; ?></td>
                     <td><?php echo $address->city; ?></td>
                     <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
-                    <td><a class="btn btn-danger triggerDelete" href="api/address/" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
+                    <td><a class="btn btn-danger triggerDelete" href="api/movie/" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
