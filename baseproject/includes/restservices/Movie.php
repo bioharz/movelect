@@ -1,6 +1,6 @@
 <?php
 
-class Address extends RESTClass
+class Movie extends RESTClass
 {
 	private $Database = null;
 
@@ -18,11 +18,11 @@ class Address extends RESTClass
 	{
 		if(isset($data['returnView']) && $data['returnView'])
 		{
-			$view = new View('address');
+			$view = new View('Movie');
 
 			if(isset($data['id']))
 			{
-				$dataForView = AddressModel::getAddressById($data['id']);
+				$dataForView = MovieModel::getMovieById($data['id']);
 				$user = new User();
 
 				if($dataForView->userId = $user->id)
@@ -78,11 +78,11 @@ class Address extends RESTClass
 		{
 			$data['userId'] = $user->id;
 
-			AddressModel::createNewAddress($data);
+			MovieModel::createNewMovie($data);
 
 			$jsonResponse = new JSON();
 			$jsonResponse->result = true;
-			$jsonResponse->setMessage('Address created!');
+			$jsonResponse->setMessage('Movie created!');
 			$jsonResponse->send();
 		}
 		else
@@ -114,7 +114,7 @@ class Address extends RESTClass
 
 		if(!$error)
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$addressObj = MovieModel::getMovieById($data['id']);
 
 			if($addressObj->userId != $user->id)
 			{
@@ -125,11 +125,11 @@ class Address extends RESTClass
 			}
 			else
 			{
-				AddressModel::saveAddress($data);
+				MovieModel::saveMovie($data);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;
-				$jsonResponse->setMessage('Address saved!');
+				$jsonResponse->setMessage('Movie saved!');
 				$jsonResponse->send();
 			}
 
@@ -156,7 +156,7 @@ class Address extends RESTClass
 		}
 		else
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$addressObj = MovieModel::getMovieById($data['id']);
 
 			if($addressObj->userId != $user->id)
 			{
@@ -167,11 +167,11 @@ class Address extends RESTClass
 			}
 			else
 			{
-				AddressModel::deleteAddress($addressObj->id);
+				MovieModel::deleteMovie($addressObj->id);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;
-				$jsonResponse->setMessage('Address deleted!');
+				$jsonResponse->setMessage('Movie deleted!');
 				$jsonResponse->send();
 			}
 		}

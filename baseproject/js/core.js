@@ -15,9 +15,9 @@ jQuery(document).ready(function() {
         var that = this;
 
 
-        var theTitle = "Neue Adresse anlegen";
+        var theTitle = "Neue Film anlegen";
         var thePrimaryButton = "Hinzufügen";
-        var apiRequestUrl = "api/address/?returnView=true";
+        var apiRequestUrl = "api/movie/?returnView=true";
 
         if(typeof addressId !== "undefined")
         {

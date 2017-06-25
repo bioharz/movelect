@@ -30,44 +30,61 @@
 </head>
 <body>
 <header>
-	<div class="inner">
-		<div class="logo">
-			<div class="name">Adressverwaltung</div>
-			<div class="version">1.0</div>
-		</div>
+
+
 
 		<?php if(LOGGED_IN == true): ?>
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="/" class="navbar-brand active">Adressverwaltung</a>
-					</div>
-
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="logout">(Abmelden)</a></li>
-						</ul>
+            <ul class="row nav nav-tabs navigation">
+                <li role="presentation" class="active col-xs-3 text-center"><a href="#">MY GROUPS</span></a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="account">ACCOUNT</a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="notifications">NOTIFICATIONS</span></a></li>
+                <li role="presentation" class="col-xs-3 text-center"><a href="logout">LOGOUT</a></li>
 
-						<p class="navbar-text navbar-right">Angemeldet als <strong class="username"><?php echo $this->username; ?></strong></p>
 
-					</div>
-				</div>
-			</nav>
+            </ul>
+
+
+
+
+
+<!--			<nav class="navbar navbar-default">-->
+<!--				<div class="container-fluid">-->
+<!--					<!-- Brand and toggle get grouped for better mobile display -->
+<!--					<div class="navbar-header">-->
+<!--						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+<!--							<span class="sr-only">Toggle navigation</span>-->
+<!--							<span class="icon-bar"></span>-->
+<!--							<span class="icon-bar"></span>-->
+<!--							<span class="icon-bar"></span>-->
+<!--						</button>-->
+<!--						<a href="/" class="navbar-brand active">Adressverwaltung</a>-->
+<!--					</div>-->
+<!---->
+<!--					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+<!---->
+<!---->
+<!--						<ul class="nav navbar-nav navbar-right">-->
+<!--							<li><a href="logout">(Abmelden)</a></li>-->
+<!--						</ul>-->
+<!---->
+<!--						<p class="navbar-text navbar-right">Angemeldet als <strong class="username">--><?php //echo $this->username; ?><!--</strong></p>-->
+<!---->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</nav>-->
 		<?php else: ?>
-			<nav class="mainnav">
-				<ul class="nav nav-pills">
-					<li<?php if($this->current == "login"): ?>class="active"<?php endif; ?>><a href="login">Login</a></li>
-				</ul>
-			</nav>
+
+            <ul class="row nav nav-tabs navigation">
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "home"): ?> active<?php endif; ?>"><a href="#">HOME</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "about"): ?> active<?php endif; ?>"><a href="about">ABOUT</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "contact"): ?> active<?php endif; ?>"><a href="contact">CONTACT</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "login"): ?> active<?php endif; ?>"><a href="login">LOGIN</a></li>
+            </ul>
+
+
+
 		<?php endif; ?>
 
 	</div>

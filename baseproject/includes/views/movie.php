@@ -1,5 +1,5 @@
 <div class="row">
-	<form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/address/" class="col-xs-12">
+	<form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
 
 		<div class="form-group">
 			<label for="firstname">Vorname:</label>

@@ -8,7 +8,7 @@ echo $this->header;
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Adresse anlegen</button>
 
-        <?php if($this->addresses): ?>
+        <?php if($this->movies): ?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -21,7 +21,7 @@ echo $this->header;
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($this->addresses as $address): ?>
+            <?php foreach($this->movies as $address): ?>
                 <tr>
                     <td><?php echo $address->id; ?></td>
                     <td><?php echo $address->lastname; ?></td>
