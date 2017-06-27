@@ -15,3 +15,7 @@ $route['/logout.html'] = array('controller' => 'LogoutController', 'uniqueName' 
 
 $route['/contact'] = array('controller' => 'ContactController', 'uniqueName' => 'contact');
 $route['/contact.html'] = array('controller' => 'ContactController', 'uniqueName' => 'contact');
+
+
+$route['/movie'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');
+$route['/movie.html'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');

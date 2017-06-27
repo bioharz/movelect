@@ -19,6 +19,7 @@ echo $this->header;
                     <th>Titel</th>
                     <th>Direktor</th>
                     <th>Jahr</th>
+                    <th>Details</th>
                     <th>Bearbeiten</th>
                     <th>Löschen</th>
                 </tr>
@@ -30,6 +31,7 @@ echo $this->header;
                     <td><?php echo $movie->movie_name; ?></td>
                     <td><?php echo $movie->director; ?></td>
                     <td><?php echo $movie->year; ?></td>
+                    <td><button class="btn btn-default" data-toggle="modal" data-target="#viewModal" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-film"></i> Details</button></td>
                     <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
                     <td><a class="btn btn-danger triggerDelete" href="api/movie/" data-id="<?php echo $movie->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
                 </tr>
