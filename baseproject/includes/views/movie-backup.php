@@ -3,25 +3,27 @@
     <div class="row date">
         <div class="col-xs-4"></div>
         <div class="col-xs-4">
-            <input type="text" class="form-control text-center" id="inputMovie" placeholder="add movie">
-            <button id="searchMovie" type="submit" class="col-xs-4 btn btn-default">search</button>
-            <table class="table table-striped" id="results">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Poster</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </tbody>
-
-            </table>
+            <div class="imdb">
+                <input type="text" class="form-control text-center" id="inputMovie" placeholder="add movie">
+                <button id="searchMovie" type="submit" class="col-xs-4 btn btn-default">search</button>
+                <table class="table table-striped" id="results">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Poster</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </tbody>
+    
+                </table>
+            </div>
         </div>
         <div class="col-xs-4"></div>
     </div>
@@ -141,10 +143,9 @@
 
     function selectMovie(indexId) {
 
+
         console.log(indexId);
         console.log(allMovies[indexId]);
-
-
 
     }
 
