@@ -29,23 +29,23 @@
     <form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
 
         <div class="form-group">
-            <label for="movie_name">Aktor:</label>
+            <label for="movie_name">Film Name:</label>
             <input type="text" name="movie_name" class="form-control" id="movie_name" value="<?php echo $this->movie_name; ?>">
         </div>
         <div class="form-group">
-            <label for="director">Film Name:</label>
+            <label for="director">Regisseur:</label>
             <input type="text" name="director" class="form-control" id="director" value="<?php echo $this->director; ?>">
         </div>
         <div class="form-group">
-            <label for="year">Jahr</label>
+            <label for="year">Jahr:</label>
             <input type="text" class="form-control" name="year" id="year" value="<?php echo $this->year; ?>">
         </div>
         <div class="form-group">
-            <label for="imdb_id">imdb-id</label>
+            <label for="imdb_id">imdb-id:</label>
             <input type="text" name="imdb_id" class="form-control" id="imdb_id" value="<?php echo $this->imdb_id; ?>">
         </div>
         <div class="form-group">
-            <label for="image_path">Bild Pfad</label>
+            <label for="image_path">Bild Pfad:</label>
             <input type="text" name="image_path" class="form-control" id="image_path" value="<?php echo $this->image_path; ?>">
         </div>
         <?php if($this->id): ?>
@@ -57,7 +57,7 @@
 
     //var selectedMovie = null;
     //var selectedMovieID = 0;
-    var allMovies = null;
+    //var allMovies = null;
 
 
 
@@ -65,7 +65,9 @@
         $(init);
         function init() {
 
+            var imdbApiPath = "http://www.omdbapi.com/";
             var apiKey = "apikey=a7d2828f";
+            var page = 1;
 
             $("#searchMovie").click(searchMovie);
             var inputMovie = $("#inputMovie");
@@ -76,7 +78,7 @@
                 var title = inputMovie.val();
 
                 $.ajax({
-                    url: "http://www.omdbapi.com/?s=" + title + "&" + apiKey,
+                    url:  imdbApiPath+"?s=" + title + "&" + apiKey + "&type=movie&page=" + page,
                     //dataType: "jsonp",
                     success: renderMovies
                 });
@@ -118,7 +120,7 @@
                     var titletd = $("<td>").append(movie.Title);
                     var yeartd = $("<td>").append(movie.Year);
 
-                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100'  onclick=\"selectMovie("+counter+")\" />");
+                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100'  onclick=\"selectMovie(\'"+movie.imdbID+"\')\" />");
 
                     tr.append(titletd);
                     tr.append(yeartd);
@@ -139,14 +141,51 @@
 
     )();
 
-    function selectMovie(indexId) {
+    function selectMovie(imdbID) {
 
+        console.log(imdbID);
+
+
+        var movieDetails;
+
+        var imdbApiPath = "http://www.omdbapi.com/";
+        var apiKey = "apikey=a7d2828f";
+
+        findMoviebyID();
+
+        function findMoviebyID() {
+            //var title = inputMovie.val();
+
+            $.ajax({
+                url:  imdbApiPath+"?i=" + imdbID + "&" + apiKey + "&type=movie",
+                //dataType: "jsonp",
+                success: putMovieDetails
+            });
+        }
+
+        /*
         console.log(indexId);
         console.log(allMovies[indexId]);
+
+        var thisMovie = allMovies[indexId];
+*/
+        function putMovieDetails(selectedMovie) {
+
+            console.log(selectedMovie);
+
+            $("#movie_name").val(selectedMovie.Title);
+            $("#director").val(selectedMovie.Director);
+            $("#year").val(selectedMovie.Year);
+            $("#imdb_id").val(selectedMovie.imdbID);
+            $("#image_path").val(selectedMovie.Poster);
+
+        }
 
 
 
     }
+
+
 
 
 
