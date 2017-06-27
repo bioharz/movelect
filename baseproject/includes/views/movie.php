@@ -55,7 +55,8 @@
 </div>
 <script type="text/javascript">
 
-    var selectedMovie;
+    //var selectedMovie;
+    var selectedMovieID = 0;
     //var allMovies;
 
 
@@ -103,13 +104,14 @@
 
                     var movie = result[counter];
 
-                    selectedMovieID = movie.imdbID;
+                    this.selectedMovieID = movie.imdbID;
+
 
                     var tr = $("<tr>");
                     var titletd = $("<td>").append(movie.Title);
                     var yeartd = $("<td>").append(movie.Year);
 
-                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100' onclick=\"selectMovie(this.selectedMovieID)\" > ");
+                    var postertd = $("<td>").append("<img src=\"" + movie.Poster + "\"  width='100'  onclick=\"selectMovie(\'"+this.selectedMovieID+"\')\" />");
 
                     tr.append(titletd);
                     tr.append(yeartd);
@@ -131,6 +133,7 @@
     )();
 
     function selectMovie(imdbID) {
+
 
         console.log(imdbID);
 
