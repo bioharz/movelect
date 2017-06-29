@@ -4,8 +4,6 @@ echo $this->header;
 
 ?>
 
-
-    <!--Logo-->
     <div class="col-xs-12 brandlogo">
         <img class="col-xs-12" src="./media/BrandLogo1.png" alt="Logo"/>
     </div>

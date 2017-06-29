@@ -36,7 +36,7 @@ class Movie extends RESTClass
 
 				if($dataForView->userId = $user->id)
 				{
-					//ok - its your address!
+					//ok - its your movie!
 
 					//load old values
 					$view->setData((array) $dataForView);
@@ -48,10 +48,10 @@ class Movie extends RESTClass
 				}
 				else
 				{
-					//its not your address!
+					//its not your movie!
 					$jsonResponse = new JSON();
 					$jsonResponse->result = false;
-					$jsonResponse->setMessage('You tried to edit an address that doesn\'t belong to you! No chance!');
+					$jsonResponse->setMessage('You tried to edit an movie that doesn\'t belong to you! No chance!');
 					$jsonResponse->send();
 				}
 			}
@@ -123,13 +123,13 @@ class Movie extends RESTClass
 
 		if(!$error)
 		{
-			$addressObj = MovieModel::getMovieById($data['id']);
+			$movieObj = MovieModel::getMovieById($data['id']);
 
-			if($addressObj->userId != $user->id)
+			if($movieObj->userId != $user->id)
 			{
 				$jsonResponse = new JSON();
 				$jsonResponse->result = false;
-				$jsonResponse->setMessage("You're not allowed to save/edit that address!");
+				$jsonResponse->setMessage("You're not allowed to save/edit that movie!");
 				$jsonResponse->send();
 			}
 			else
@@ -165,18 +165,18 @@ class Movie extends RESTClass
 		}
 		else
 		{
-			$addressObj = MovieModel::getMovieById($data['id']);
+			$movieObj = MovieModel::getMovieById($data['id']);
 
-			if($addressObj->userId != $user->id)
+			if($movieObj->userId != $user->id)
 			{
 				$jsonResponse = new JSON();
 				$jsonResponse->result = false;
-				$jsonResponse->setMessage("You're not allowed to delete that address!");
+				$jsonResponse->setMessage("You're not allowed to delete that movie!");
 				$jsonResponse->send();
 			}
 			else
 			{
-				MovieModel::deleteMovie($addressObj->id);
+				MovieModel::deleteMovie($movieObj->id);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;

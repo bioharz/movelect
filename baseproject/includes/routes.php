@@ -14,3 +14,9 @@ $route['/logout.html'] = array('controller' => 'LogoutController', 'uniqueName' 
 
 $route['/movie'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');
 $route['/movie.html'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');
+
+$route['/account'] = array('controller' => 'AccountController', 'uniqueName' => 'account');
+$route['/account.html'] = array('controller' => 'AccountController', 'uniqueName' => 'account');
+
+$route['/notification'] = array('controller' => 'NotificationController', 'uniqueName' => 'notification');
+$route['/notification.html'] = array('controller' => 'NotificationController', 'uniqueName' => 'notification');

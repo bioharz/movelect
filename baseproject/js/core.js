@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
     editModal.on('show.bs.modal', function (event) {
 
         var button = $(event.relatedTarget) // Button that triggered the modal
-        var addressId = button.data('id') // Extract info from data-* attributes
+        var movieId = button.data('id') // Extract info from data-* attributes
 
         var that = this;
 
@@ -22,13 +22,13 @@ jQuery(document).ready(function() {
         var thePrimaryButton = "Hinzufügen";
         var apiRequestUrl = "api/movie/?returnView=true";
 
-        if(typeof addressId !== "undefined")
+        if(typeof movieId !== "undefined")
         {
-            editModal.find('.id').html(addressId);
-            theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
+            editModal.find('.id').html(movieId);
+            theTitle = "Film mit der ID " + movieId + " bearbeiten";
             thePrimaryButton = "Speichern";
 
-            apiRequestUrl = apiRequestUrl + "&id=" + addressId;
+            apiRequestUrl = apiRequestUrl + "&id=" + movieId;
         }
 
         //this is to give the title and the "save" button different labels if they clicked on edit or new
@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
     viewModal.on('show.bs.modal', function (event) {
 
         var button = $(event.relatedTarget) // Button that triggered the modal
-        var addressId = button.data('id') // Extract info from data-* attributes
+        var movieId = button.data('id') // Extract info from data-* attributes
 
         var that = this;
 
@@ -72,17 +72,18 @@ jQuery(document).ready(function() {
         var thePrimaryButton = "OK";
         var apiRequestUrl = "api/movie/?returnView=true&detail=true";
 
-        if(typeof addressId !== "undefined")
+
+        if(typeof movieId !== "undefined")
         {
-            editModal.find('.id').html(addressId);
-            theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
+            editModal.find('.id').html(movieId);
+            theTitle = "Film mit der ID " + movieId + " bearbeiten";
             thePrimaryButton = "Speichern";
 
-            apiRequestUrl = apiRequestUrl + "&id=" + addressId;
+            apiRequestUrl = apiRequestUrl + "&id=" + movieId;
         }
 
         //this is to give the title and the "save" button different labels if they clicked on edit or new
-        editModal.find('.modal-title').html(theTitle);
+        editModal.find('.modal-title-view').html(theTitle);
         editModal.find('.btn-primary').html(thePrimaryButton);
 
         //before we have a formular loaded via ajax - we don't want them to be able to click on "save"
@@ -117,7 +118,7 @@ jQuery(document).ready(function() {
     $('.triggerDelete').click(function(e) {
         e.preventDefault();
 
-        var r = confirm("Wollen Sie die Adresse wirklich löschen?");
+        var r = confirm("Wollen Sie den Film wirklich löschen?");
         if (r == true) {
             var dataToSend = {'id':$(this).attr('data-id')};
             $.ajax({
