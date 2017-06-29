@@ -1,48 +1,37 @@
+
 <div class="row">
+<!--search button-->
+<div class="input-group">
+    <input type="text" class="form-control text-center" id="inputMovie" placeholder="Film suchen">
+    <span class="input-group-btn">
+        <button id="searchMovie" type="submit" class="btn btn-default text-center">Go</button>
+    </span>
+</div>
 
-    <div class="row date">
+    <!--Hinweis jumbotron-->
+<div class="jumbotron text-center" id="noteSearch">
+    Du kannst oben einen Film suchen und durch einen einfachen Klick auf den Movie-Poster die Film-Daten
+    bequem ausfüllen lassen <strong>oder</strong> das Formular manuell ausfüllen/bearbeiten
+</div>
+<!--result-table-->
+<table class="table table-striped" id="results">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Poster</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </tbody>
+</table>
 
-        <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-
-        <div class="col-xs-1"/>
-        <div class="col-xs-10">
-
-
-
-
-            <input type="text" class="form-control text-center" id="inputMovie" placeholder="add movie">
-            <button id="searchMovie" type="submit" class="col-xs-4 btn btn-default text-center">search</button>
-
-            <table class="table table-striped" id="results">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Poster</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </tbody>
-
-            </table>
-        </div>
-        <div class="col-xs-1"/>
-
-    </div>
-
+<!--input form-->
     <form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
 
         <div class="form-group">
