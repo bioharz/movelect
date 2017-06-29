@@ -20,13 +20,13 @@ echo $this->header;
 
             <form method="post" action="login" class="form-horizontal col-xs-12">
                 <?php if($this->errorPasswd == true): ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4>Benutzername und/oder Passwort sind falsch</h4>
-                        <p>Prüfen Sie bitte ob Sie sich nicht vertippt haben und versuchen Sie es erneut!</p>
-                    </div>
+                        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4>Benutzername und/oder Passwort sind falsch</h4>
+                            <p>Prüfen Sie bitte ob Sie sich nicht vertippt haben und versuchen Sie es erneut!</p>
+                        </div>
                 <?php endif; ?>
                 <div class="form-group">
                     <label for="username" class="col-xs-12 col-md-2">Benutzername</label>

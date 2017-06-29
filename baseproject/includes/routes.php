@@ -14,3 +14,12 @@ $route['/logout.html'] = array('controller' => 'LogoutController', 'uniqueName' 
 
 $route['/movie'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');
 $route['/movie.html'] = array('controller' => 'MovieDetailController', 'uniqueName' => 'movieDetails');
+
+$route['/contact'] = array('controller'=> 'ContactController', 'uniqueName' => 'contact');
+$route['/contact.html'] = array('controller'=> 'ContactController', 'uniqueName' => 'contact');
+
+$route['/about'] = array('controller'=> 'AboutController', 'uniqueName' => 'about');
+$route['/about.html'] = array('controller'=> 'AboutController', 'uniqueName' => 'about');
+
+$route['/home'] = array('controller'=> 'HomeController', 'uniqueName' => 'home');
+$route['/home.html'] = array('controller'=> 'HomeController', 'uniqueName' => 'home');

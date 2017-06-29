@@ -78,7 +78,7 @@
 		<?php else: ?>
 
             <ul class="row nav nav-tabs navigation">
-                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "home"): ?> active<?php endif; ?>"><a href="#">HOME</a></li>
+                <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "home"): ?> active<?php endif; ?>"><a href="home">HOME</a></li>
                 <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "about"): ?> active<?php endif; ?>"><a href="about">ABOUT</a></li>
                 <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "contact"): ?> active<?php endif; ?>"><a href="contact">CONTACT</a></li>
                 <li role="presentation" class="col-xs-3 text-center <?php if($this->current == "login"): ?> active<?php endif; ?>"><a href="login">LOGIN</a></li>
