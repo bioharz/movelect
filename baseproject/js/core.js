@@ -18,14 +18,14 @@ jQuery(document).ready(function() {
         var that = this;
 
 
-        var theTitle = "Neue Film anlegen";
+        var theTitle = "Neuen Film anlegen";
         var thePrimaryButton = "Hinzufügen";
         var apiRequestUrl = "api/movie/?returnView=true";
 
         if(typeof addressId !== "undefined")
         {
             editModal.find('.id').html(addressId);
-            theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
+            theTitle = "Film mit der ID " + addressId + " bearbeiten";
             thePrimaryButton = "Speichern";
 
             apiRequestUrl = apiRequestUrl + "&id=" + addressId;
@@ -117,7 +117,7 @@ jQuery(document).ready(function() {
     $('.triggerDelete').click(function(e) {
         e.preventDefault();
 
-        var r = confirm("Wollen Sie die Adresse wirklich löschen?");
+        var r = confirm("Willst Du diesen Film wirklich löschen?");
         if (r == true) {
             var dataToSend = {'id':$(this).attr('data-id')};
             $.ajax({
