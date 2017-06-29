@@ -58,6 +58,56 @@ jQuery(document).ready(function() {
 
     });
 
+    var viewModal = $('#viewModal');
+
+    viewModal.on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var addressId = button.data('id') // Extract info from data-* attributes
+
+        var that = this;
+
+
+        var theTitle = "Film Details";
+        var thePrimaryButton = "OK";
+        var apiRequestUrl = "api/movie/?returnView=true&detail=true";
+
+        if(typeof addressId !== "undefined")
+        {
+            editModal.find('.id').html(addressId);
+            theTitle = "Adresse mit der ID " + addressId + " bearbeiten";
+            thePrimaryButton = "Speichern";
+
+            apiRequestUrl = apiRequestUrl + "&id=" + addressId;
+        }
+
+        //this is to give the title and the "save" button different labels if they clicked on edit or new
+        editModal.find('.modal-title').html(theTitle);
+        editModal.find('.btn-primary').html(thePrimaryButton);
+
+        //before we have a formular loaded via ajax - we don't want them to be able to click on "save"
+        //therefore we disable the button
+        editModal.find('.btn-primary').prop('disabled', true);
+
+        jQuery.ajax({
+            'url': apiRequestUrl,
+            'method': 'get',
+            'success': function(receivedData) {
+
+                if(receivedData.result) {
+                    var modal = $(that)
+                    modal.find('.modal-body').html(receivedData.data.html);
+                    editModal.find('.btn-primary').prop('disabled', false);
+                } else { //there was an error - do something!
+
+                }
+            }
+        });
+
+
+
+    });
+
 
     editModal.find('.btn-primary').click(function() {
         editModal.find('form').trigger('submit', [this]);

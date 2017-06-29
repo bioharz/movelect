@@ -18,7 +18,16 @@ class Movie extends RESTClass
 	{
 		if(isset($data['returnView']) && $data['returnView'])
 		{
-			$view = new View('Movie');
+
+            if(isset($data['detail']) && $data['detail'])
+            {
+                $view = new View('Movie-Detail');
+
+            }else {
+                $view = new View('Movie');
+
+            }
+
 
 			if(isset($data['id']))
 			{
