@@ -20,3 +20,13 @@ $route['/account.html'] = array('controller' => 'AccountController', 'uniqueName
 
 $route['/notification'] = array('controller' => 'NotificationController', 'uniqueName' => 'notification');
 $route['/notification.html'] = array('controller' => 'NotificationController', 'uniqueName' => 'notification');
+
+
+$route['/contact'] = array('controller'=> 'ContactController', 'uniqueName' => 'contact');
+$route['/contact.html'] = array('controller'=> 'ContactController', 'uniqueName' => 'contact');
+
+$route['/about'] = array('controller'=> 'AboutController', 'uniqueName' => 'about');
+$route['/about.html'] = array('controller'=> 'AboutController', 'uniqueName' => 'about');
+
+$route['/home'] = array('controller'=> 'HomeController', 'uniqueName' => 'home');
+$route['/home.html'] = array('controller'=> 'HomeController', 'uniqueName' => 'home');
