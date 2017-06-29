@@ -58,7 +58,7 @@ class MovieModel
 	{
 		$db = new Database();
 
-		$sql = "UPDATE movie SET movie_name='".$db->escapeString($data['movie_name'])."',lastname='".$db->escapeString($data['director'])."',street='".$db->escapeString($data['year'])."',zip='".$db->escapeString($data['imdb_id'])."',city='".$db->escapeString($data['image_path'])."' WHERE id=".intval($data['id']);
+		$sql = "UPDATE movie SET movie_name='".$db->escapeString($data['movie_name'])."',director='".$db->escapeString($data['director'])."',year='".$db->escapeString($data['year'])."',imdb_id='".$db->escapeString($data['imdb_id'])."',image_path='".$db->escapeString($data['image_path'])."' WHERE id=".intval($data['id']);
 		$db->query($sql);
 
 		return (object) $data;
