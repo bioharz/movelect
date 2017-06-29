@@ -1,10 +1,26 @@
 <div class="row">
 
     <div class="row date">
-        <div class="col-xs-4"></div>
-        <div class="col-xs-4">
+
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+        <div class="col-xs-1"/>
+        <div class="col-xs-10">
+
+
+
+
             <input type="text" class="form-control text-center" id="inputMovie" placeholder="add movie">
-            <button id="searchMovie" type="submit" class="col-xs-4 btn btn-default">search</button>
+            <button id="searchMovie" type="submit" class="col-xs-4 btn btn-default text-center">search</button>
+
             <table class="table table-striped" id="results">
                 <thead>
                 <tr>
@@ -23,7 +39,8 @@
 
             </table>
         </div>
-        <div class="col-xs-4"></div>
+        <div class="col-xs-1"/>
+
     </div>
 
     <form method="<?php if($this->id): ?>put<?php else: ?>post<?php endif; ?>" action="api/movie/" class="col-xs-12">
