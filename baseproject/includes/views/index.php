@@ -3,17 +3,22 @@
 echo $this->header;
 
 ?>
+
+<div class="hintergrund">
+    <img class="col-xs-12" src="./media/background_dash.jpg" alt="" title=""/>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="inhalt">
 <div id="main">
     <div class="row">
 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neuen Film manuell hinzufügen</button>
-
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal-imdb"><i class="glyphicon glyphicon-plus"></i> Neuen Film von IMDB klauen</button>
-
-
         <?php if($this->movies): ?>
-        <table class="table table-striped">
-            <thead>
+        <table class="table table-striped tabhintergrund">
+            <thead">
                 <tr>
                     <th>Id</th>
                     <th>Titel</th>
@@ -40,12 +45,20 @@ echo $this->header;
         </table>
         <?php else: ?>
                 <p>&nbsp;</p>
-                <div class="alert alert-info">Noch keine Filme vorhanden - Sie können über den Button <strong>Neuen Film hinzufügen</strong> eine neue Film Movelect hinzufügen.</div>
+                <div class="jumbotron text-center">Noch keine Filme vorhanden - klick doch mal auf den Button <strong>Neuen Film hinzufügen</strong> </div>
         <?php endif; ?>
+
+        <!--Button "Film hinzufügen"-->
+        <div class="row">
+            <div class="col-xs-4"> </div>
+            <button class="btn btn-default col-xs-4" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neuen Film hinzufügen</button>
+            <!--<button class="btn btn-default col-xs-3" data-toggle="modal" data-target="#editModal-imdb"><i class="glyphicon glyphicon-plus"></i> Neuen Film von IMDB klauen</button> -->
+            <div class="col-xs-4"></div>
+        </div>
 
     </div>
 </div>
-
+</div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="viewModal">
         <div class="modal-dialog" role="document">

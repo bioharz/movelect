@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
         var that = this;
 
 
-        var theTitle = "Neue Film anlegen";
+        var theTitle = "Neuen Film anlegen";
         var thePrimaryButton = "Hinzufügen";
         var apiRequestUrl = "api/movie/?returnView=true";
 
@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
     $('.triggerDelete').click(function(e) {
         e.preventDefault();
 
-        var r = confirm("Wollen Sie den Film wirklich löschen?");
+        var r = confirm("Willst Du diesen Film wirklich löschen?");
         if (r == true) {
             var dataToSend = {'id':$(this).attr('data-id')};
             $.ajax({
