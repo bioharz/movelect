@@ -38,7 +38,7 @@
         <ul class="row nav nav-tabs navigation">
             <li role="presentation"
                 class="col-xs-3 text-center <?php if ($this->current == "index"): ?> active<?php endif; ?>"><a
-                        href="index">MY GROUPS</span></a></li>
+                        href="index">MY MOVIES</span></a></li>
             <li role="presentation"
                 class="col-xs-3 text-center <?php if ($this->current == "account"): ?> active<?php endif; ?>"><a
                         href="account">ACCOUNT</a></li>

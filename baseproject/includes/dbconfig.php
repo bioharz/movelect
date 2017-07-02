@@ -8,3 +8,5 @@ define('DB_NAME', 'mvc');
 
 define('DB_USER', 'mvc');
 define('DB_PASS', 'mvc');
+//define('DB_USER', 'root');
+//define('DB_PASS', '');

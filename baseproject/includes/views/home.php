@@ -11,14 +11,19 @@ echo $this->header;
     </div>
     <br>
 
-    <div id="main">
-        <div class="row">
-            <h1 class="col-xs-12">Willkommen auf movelect.com</h1>
-            <p class="col-xs-12">Der app für die schnelle Filmentscheidung</p>
-            <form method="get" action="login">
-                <button class="btn btn-default" type="submit">Zum Login</button>
-            </form>
-        </div>
+    <!--Text Headline-->
+    <div class="row headline">
+        <h1 class="col-xs-12 text-center">THE MOVIE ELECTING APP
+        </h1>
+    </div>
+
+
+    <div class="row signup">
+        <div class="col-xs-4"></div>
+        <form method="get" action="login">
+            <button type="submit" class="col-xs-4 btn btn-default">Register</button>
+        </form>
+        <div class="col-xs-4"></div>
     </div>
 
 
