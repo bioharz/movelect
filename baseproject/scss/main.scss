@@ -3,9 +3,12 @@
 }
 
 $desktop            : 990px;
+//Colors:
 $blue               : #337ab7;
-
 $lineColor          : $blue;
+$light_gray         : lightgray;
+$white              : white;
+$desert_storm       : #f8f8f8;
 
 
 #main {
@@ -66,5 +69,42 @@ header {
 
 .toast-success{background-color:#dff0d8}
 .toast-error{background-color:#f2dede}
+
+//Layerdefinition index.php
+
+.hintergrund {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.inhalt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+}
+//Override bootstrap.min.css um Tabellen-Farben anzupassen
+.tabhintergrund {
+    background-color: $light_gray;
+}
+//Override bootstrap.min.css um Tabellen-Farben anzupassen
+.jumbotron {
+    background-color: $white;
+}
+
+.table-striped > tbody > tr:nth-child(2n + 1) {
+    > td {
+        background-color: $white;
+    }
+    > th {
+        background-color: $white;
+    }
+}
+//nochmaliger Override jumbotron per id um Hinweisfarbe bei Suche anzupassen
+#noteSearch {
+    background-color: $desert_storm;
+}
 
 
